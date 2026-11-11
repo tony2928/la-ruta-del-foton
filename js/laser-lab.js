@@ -44,7 +44,7 @@
 
   function defaultMessage() {
     if (state.pump === 0) {
-      return "El medio está en reposo. Sube el bombeo para excitar átomos.";
+      return "El medio está en reposo. Aumenta el bombeo para excitar átomos.";
     }
     if (!state.inversion) {
       return "Aún no hay inversión: N₁ sigue siendo mayor que N₂. La emisión espontánea domina y la luz no se amplifica.";
@@ -128,7 +128,7 @@
   fireButton.addEventListener("click", () => {
     if (!state.inversion) {
       state.lasing = false;
-      refresh("No hay inversión suficiente. Sube el bombeo hasta que N₂ supere a N₁.", "warn");
+      refresh("No hay inversión suficiente. Aumenta el bombeo hasta que N₂ supere a N₁.", "warn");
       return;
     }
     if (!state.aligned) {
@@ -145,7 +145,7 @@
     state.aligned = false;
     state.lasing = false;
     pump.value = "0";
-    refresh("Laboratorio reiniciado. Sube el bombeo para empezar.", "default");
+    refresh("Laboratorio reiniciado. Aumenta el bombeo para empezar.", "default");
   });
 
   refresh();

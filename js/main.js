@@ -150,47 +150,47 @@
       {
         id: "inicio",
         label: "Portada",
-        note: "Empieza con la pregunta que abre la página: ¿qué tienen en común un escáner, la fibra y un LiDAR? Menciona que la respuesta está en la emisión láser."
+        note: "Comienza con un ejemplo cotidiano: un lector de códigos, la fibra óptica o un sensor LiDAR. Todos utilizan luz láser."
       },
       {
         id: "que-es",
-        label: "01 · ¿Qué es un láser?",
-        note: "Define el acrónimo y contrasta foco contra láser: muchas longitudes de onda y direcciones frente a una banda estrecha, una dirección y coherencia. Aclara que no todo láser es rojo ni visible."
+        label: "¿Qué es un láser?",
+        note: "Explica el acrónimo y compara la luz de un foco con la de un láser: muchas longitudes de onda y direcciones frente a una banda estrecha, una dirección definida y coherencia. Aclara que no todo láser es rojo ni visible."
       },
       {
         id: "procesos",
-        label: "02 · Los tres procesos",
-        note: "Muestra absorción, emisión espontánea y emisión estimulada. Enfatiza la idea clave: la emisión estimulada produce un segundo fotón idéntico; ese es el efecto multiplicador."
+        label: "Luz y materia",
+        note: "Muestra la absorción, la emisión espontánea y la emisión estimulada. Destaca que la emisión estimulada produce un segundo fotón idéntico: esa es la base de la amplificación."
       },
       {
         id: "receta",
-        label: "03 · La receta y el laboratorio",
-        note: "Explica medio activo, bombeo, inversión y cavidad. Luego pide a alguien que suba el bombeo, alinee la cavidad y dispare un fotón. Pregunta qué condición falta si no enciende."
+        label: "Funcionamiento y laboratorio",
+        note: "Explica el medio activo, el bombeo, la inversión de población y la cavidad. Después pide a alguien que aumente el bombeo, alinee la cavidad y dispare un fotón. Pregunta qué condición falta si no enciende."
       },
       {
         id: "propiedades",
-        label: "04 · Propiedades",
-        note: "Relaciona cada propiedad con una aplicación: monocromaticidad con el color y el almacenamiento; coherencia con interferencia; direccionalidad con enfoque, corte y LiDAR."
+        label: "Propiedades de la luz láser",
+        note: "Relaciona cada propiedad con una aplicación: la monocromaticidad con el color y el almacenamiento; la coherencia con la interferencia; la direccionalidad con el enfoque, el corte y el LiDAR."
       },
       {
         id: "hene",
-        label: "05 · He-Ne y el cálculo",
-        note: "Recorre el esquema: el helio transfiere energía al neón y el neón emite a 632.8 nm. Muestra el cálculo: 632.8 nm → 4.74 × 10¹⁴ Hz → 3.14 × 10⁻¹⁹ J → 1.96 eV."
+        label: "Ejemplo: láser de helio-neón",
+        note: "Explica que el helio transfiere energía al neón y que el neón emite a 632.8 nm. Muestra el cálculo: 632.8 nm → 4.74 × 10¹⁴ Hz → 3.14 × 10⁻¹⁹ J → 1.96 eV."
       },
       {
         id: "aplicaciones",
-        label: "06 · Aplicaciones",
-        note: "Elige dos tarjetas y pregunta la propiedad principal antes de revelarla. Cierra con que varias propiedades contribuyen y que no todo lector o sensor usa láser."
+        label: "Aplicaciones",
+        note: "Elige dos tarjetas y pregunta cuál es la propiedad principal antes de mostrar la respuesta. Aclara que varias propiedades contribuyen y que no todo lector o sensor usa láser."
       },
       {
         id: "seguridad",
-        label: "07 · Seguridad y cierre",
-        note: "Explica que la clase depende del producto y del uso; nunca se mira el haz. Cierra con las tres ideas: emisión estimulada, inversión + cavidad, y aplicaciones. Menciona el aporte del equipo."
+        label: "Seguridad",
+        note: "Explica que el riesgo depende del producto y del uso, y que nunca debe mirarse el haz. Recuerda las ideas principales: emisión estimulada, inversión de población y cavidad."
       },
       {
         id: "aporte",
         label: "Aporte del equipo",
-        note: "Cierra con la tesis: el laboratorio virtual guiado convierte la inversión de población y la cavidad en decisiones con consecuencias. Invita a probar el quiz y el detector."
+        note: "Explica que el laboratorio, la calculadora y las actividades de repaso permiten comprobar los conceptos y presentarlos en clase."
       }
     ];
 
@@ -200,7 +200,7 @@
 
     const render = () => {
       const stop = stops[index];
-      progress.textContent = `Parada ${index + 1} de ${stops.length}`;
+      progress.textContent = `Sección ${index + 1} de ${stops.length}`;
       title.textContent = stop.label;
       note.textContent = stop.note;
       goLink.setAttribute("href", `#${stop.id}`);

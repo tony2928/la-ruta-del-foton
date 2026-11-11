@@ -2,15 +2,15 @@
 
 Página educativa interactiva sobre **estudio y aplicación de la emisión láser**, elaborada para la Unidad 3 de Física de Ingeniería en Sistemas Computacionales.
 
-El recorrido va de la definición de láser a las aplicaciones, con un laboratorio conceptual, una calculadora de fotones, un detector de propiedades, un quiz y un modo exposición para la clase.
+La página va de la definición de láser a las aplicaciones, con un laboratorio conceptual, una calculadora de fotones, una actividad sobre propiedades, un cuestionario y un modo exposición para la clase.
 
 ## Qué incluye
 
-- Siete estaciones de contenido: introducción, procesos luz-materia, receta del láser, propiedades, He-Ne, aplicaciones y seguridad.
-- Laboratorio interactivo **“Enciende el láser”** con tres misiones: inversión de población, cavidad y emisión.
+- Siete apartados de contenido: introducción, procesos luz-materia, funcionamiento, propiedades, ejemplo de helio-neón, aplicaciones y seguridad.
+- Laboratorio interactivo **“Enciende el láser”** con tres pasos: inversión de población, cavidad y emisión.
 - Calculadora de fotones: longitud de onda → frecuencia → energía en J y eV.
-- Detector de propiedades y quiz con retroalimentación.
-- Modo exposición con 9 paradas y notas para el expositor.
+- Actividad de propiedades y cuestionario con retroalimentación.
+- Modo exposición con 9 secciones y notas para el expositor.
 - Referencias en APA 7, sin Wikipedia ni libros.
 - Funciona sin Internet, sin frameworks y sin CDN.
 
@@ -72,10 +72,10 @@ El resto de la página y el guion usan los roles (“quien coordina”, “quien
 1. Abre `index.html` en Chrome o Edge.
 2. Presiona `F11` o el botón **Pantalla completa** dentro del modo exposición.
 3. Pulsa **Presentar** en la barra superior.
-4. Usa las flechas `←` y `→` para recorrer las 9 paradas; `Esc` cierra el panel.
+4. Usa las flechas `←` y `→` para recorrer las 9 secciones; `Esc` cierra el panel.
 5. Ten a la mano `docs/la-ruta-del-foton.pdf` como respaldo si falla el proyector.
 
-El guion completo, con tiempos, frases y preguntas probable del jurado, está en [`docs/GUION.md`](docs/GUION.md).
+El guion completo, con tiempos, frases y preguntas probables del jurado, está en [`docs/GUION.md`](docs/GUION.md).
 
 ## Publicar en GitHub y Cloudflare Pages
 
@@ -106,7 +106,7 @@ Los pasos detallados, la solución de problemas y la alternativa con `wrangler` 
 El registro de pruebas está en [`docs/QA.md`](docs/QA.md). Incluye:
 
 - Apertura con `file://` y con servidor local.
-- Laboratorio, calculadora, pestañas, detector, quiz y modo exposición.
+- Laboratorio, calculadora, pestañas, actividad de propiedades, cuestionario y modo exposición.
 - Revisión responsive de 360 a 1920 px sin scroll horizontal.
 - Movimiento reducido.
 - Revisión de accesibilidad con axe-core (0 violaciones en escritorio y móvil).

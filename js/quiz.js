@@ -132,9 +132,9 @@
       if (answered < questions.length) {
         summary.textContent = `Respondiste ${answered} de ${questions.length}. Obtuviste ${correctCount} aciertos; completa las que faltan y vuelve a comprobar.`;
       } else if (correctCount === questions.length) {
-        summary.textContent = `Obtuviste ${correctCount} de ${questions.length}. ¡Muy bien! Ya puedes explicar la cadena completa: absorción, emisión estimulada, inversión y cavidad.`;
+        summary.textContent = `Obtuviste ${correctCount} de ${questions.length}. Puedes explicar la relación entre absorción, emisión estimulada, inversión de población y cavidad.`;
       } else {
-        summary.textContent = `Obtuviste ${correctCount} de ${questions.length}. Repasa las estaciones de procesos, laboratorio y seguridad, y vuelve a intentarlo.`;
+        summary.textContent = `Obtuviste ${correctCount} de ${questions.length}. Repasa los apartados de procesos, funcionamiento y seguridad, y vuelve a intentarlo.`;
       }
     }
   }

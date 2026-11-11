@@ -13,8 +13,8 @@
 | Laboratorio | Correcto: bombeo, inversión, cavidad, disparo y estados. |
 | Calculadora | Correcta: 632.8 nm → 473.8 THz → 3.139 × 10⁻¹⁹ J → 1.959 eV. |
 | Pestañas de procesos | Correctas con clic y con teclado (flechas). |
-| Detector de propiedades | Correcto: aciertos, errores, explicación y reinicio. |
-| Quiz | Correcto: 5/5 con respuestas correctas y retroalimentación. |
+| Actividad de propiedades | Correcto: aciertos, errores, explicación y reinicio. |
+| Cuestionario | Correcto: 5/5 con respuestas correctas y retroalimentación. |
 | Modo exposición | Correcto: abrir, avanzar, retroceder y cerrar. |
 | Responsive | Sin scroll horizontal de 360 a 1920 px. |
 | Movimiento reducido | Animaciones desactivadas; contenido visible. |
@@ -33,7 +33,7 @@ Resultado:
 - Inversión: sí.
 - Cavidad: alineada.
 - Láser: encendido.
-- Misiones: las tres completadas.
+- Pasos: los tres completados.
 - Feedback: “¡Láser encendido! Un fotón disparó la emisión estimulada…”.
 
 También se probó:
@@ -63,23 +63,23 @@ Acción: cambiar la longitud de onda y leer los resultados.
 - [x] Solo un panel está visible a la vez.
 - [x] Las animaciones se reinician al cambiar de pestaña.
 
-### 4. Detector de propiedades
+### 4. Actividad de propiedades
 
 - [x] Respuesta correcta en “Fibra óptica” → feedback correcto y marcador “Aciertos: 1 / 6”.
 - [x] Respuesta incorrecta en “Almacenamiento óptico” → feedback con la respuesta correcta.
-- [x] “Reiniciar detector” limpia tarjetas, botones y marcador.
+- [x] “Reiniciar actividad” limpia tarjetas, botones y marcador.
 
-### 5. Quiz
+### 5. Cuestionario de repaso
 
 - [x] 5 preguntas generadas con opciones y feedback.
 - [x] Respuestas correctas: “Obtuviste 5 de 5…”.
 - [x] Preguntas sin responder: se marcan y el resumen indica cuántas faltan.
-- [x] “Reiniciar” vuelve a mostrar el quiz limpio.
+- [x] “Reiniciar” vuelve a mostrar el cuestionario limpio.
 
 ### 6. Modo exposición
 
 - [x] Abre con el botón “Presentar”.
-- [x] “Siguiente” pasa de “Parada 1 de 9” a “Parada 2 de 9”.
+- [x] “Siguiente” pasa de “Sección 1 de 9” a “Sección 2 de 9”.
 - [x] El enlace “Ir a la sección” apunta al `id` correcto.
 - [x] “Anterior” y “Cerrar” funcionan.
 - [x] `Esc` cierra el panel; las flechas navegan cuando está abierto.

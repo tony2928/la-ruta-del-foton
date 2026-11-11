@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#0a1224">
-  <meta name="description" content="Página educativa interactiva sobre la emisión láser: fundamentos, laboratorio virtual, láser de helio-neón, aplicaciones y seguridad.">
+  <meta name="description" content="Investigación escolar sobre la emisión láser: qué es, cómo se produce, el ejemplo del láser de helio-neón, sus aplicaciones y su seguridad.">
   <meta name="author" content="Equipo de Física — Ingeniería en Sistemas Computacionales">
   <meta property="og:title" content="La ruta del fotón | Estudio y aplicación de la emisión láser">
-  <meta property="og:description" content="Una ruta interactiva para entender qué es un láser, cómo se amplifica la luz y dónde se usa.">
+  <meta property="og:description" content="Explicación de la emisión láser con un laboratorio interactivo, un ejemplo del láser de helio-neón y actividades de repaso.">
   <meta property="og:type" content="website">
   <title>La ruta del fotón | Estudio y aplicación de la emisión láser</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
@@ -29,13 +29,13 @@
       </a>
 
       <nav class="site-nav" aria-label="Secciones principales">
-        <a href="#que-es">01 ¿Qué es?</a>
-        <a href="#procesos">02 Procesos</a>
-        <a href="#receta">03 Laboratorio</a>
-        <a href="#propiedades">04 Propiedades</a>
-        <a href="#hene">05 He-Ne</a>
-        <a href="#aplicaciones">06 Aplicaciones</a>
-        <a href="#seguridad">07 Seguridad</a>
+        <a href="#que-es">¿Qué es?</a>
+        <a href="#procesos">Procesos</a>
+        <a href="#receta">Funcionamiento</a>
+        <a href="#propiedades">Propiedades</a>
+        <a href="#hene">Ejemplo</a>
+        <a href="#aplicaciones">Aplicaciones</a>
+        <a href="#seguridad">Seguridad</a>
       </nav>
 
       <div class="header-actions">
@@ -54,19 +54,14 @@
           <h1 id="hero-title">La ruta del <span class="text-laser">fotón</span></h1>
           <p class="hero-subtitle">Estudio y aplicación de la emisión láser</p>
           <p class="hero-lead">
-            Un escáner del súper, la fibra que te da internet y un sensor LiDAR comparten la misma física.
-            Vamos a seguir el viaje de un fotón para entender qué hace especial a la luz láser y cómo se usa
-            en tecnología real.
+            El láser se utiliza en lectores de códigos, fibra óptica, impresoras y equipos médicos.
+            En esta página explicamos cómo se produce esa luz, qué la diferencia de la luz de un foco
+            y cómo se aplica en la tecnología.
           </p>
           <div class="hero-actions">
-            <a class="btn btn--primary" href="#que-es">Comenzar la ruta</a>
+            <a class="btn btn--primary" href="#que-es">Explorar el tema</a>
             <a class="btn btn--ghost" href="#receta">Ir al laboratorio</a>
           </div>
-          <ul class="hero-meta" aria-label="Contenido de la página">
-            <li>7 estaciones</li>
-            <li>1 laboratorio interactivo</li>
-            <li>Fuentes verificables</li>
-          </ul>
         </div>
 
         <div class="hero-visual" aria-hidden="true">
@@ -110,49 +105,6 @@
         </div>
       </div>
 
-      <nav class="route-map container" aria-label="Mapa de la ruta">
-        <a href="#que-es"><span>01</span> ¿Qué es?</a>
-        <a href="#procesos"><span>02</span> Procesos</a>
-        <a href="#receta"><span>03</span> La receta</a>
-        <a href="#propiedades"><span>04</span> Propiedades</a>
-        <a href="#hene"><span>05</span> He-Ne</a>
-        <a href="#aplicaciones"><span>06</span> Aplicaciones</a>
-        <a href="#seguridad"><span>07</span> Seguridad</a>
-      </nav>
-    </section>
-
-    <section class="quick-guide container" id="como-funciona" aria-labelledby="quick-title">
-      <div class="quick-head">
-        <p class="eyebrow">Cómo funciona la página</p>
-        <h2 id="quick-title">Una ruta, tres interacciones y una demo para clase</h2>
-        <p>No es un documento para leer de corrido: es un recorrido para probar, predecir y comprobar.</p>
-      </div>
-      <div class="quick-grid">
-        <article class="quick-card">
-          <span class="quick-num">1</span>
-          <h3>Sigue la ruta</h3>
-          <p>Las siete estaciones van de la definición a las aplicaciones. Cada una responde una pregunta.</p>
-        </article>
-        <article class="quick-card">
-          <span class="quick-num">2</span>
-          <h3>Prueba los procesos</h3>
-          <p>Cambia entre absorción, emisión espontánea y emisión estimulada para ver qué pasa con el fotón.</p>
-        </article>
-        <article class="quick-card">
-          <span class="quick-num">3</span>
-          <h3>Enciende el láser</h3>
-          <p>Sube el bombeo, alinea la cavidad y dispara un fotón. El laboratorio te dice qué condición falta.</p>
-        </article>
-        <article class="quick-card">
-          <span class="quick-num">4</span>
-          <h3>Comprueba y conecta</h3>
-          <p>Resuelve el quiz, conecta aplicaciones con propiedades y revisa las fuentes al final.</p>
-        </article>
-      </div>
-      <div class="quick-note">
-        <span class="badge badge--info">Para exponer</span>
-        <p>Usa el botón <strong>Presentar</strong>: abre un panel con 9 paradas, notas cortas y navegación con flechas. El guion completo está en <code>docs/GUION.md</code>.</p>
-      </div>
     </section>
 
     <section class="section" id="que-es" aria-labelledby="que-es-title">
@@ -161,8 +113,9 @@
           <p class="section-kicker">01 · Introducción</p>
           <h2 id="que-es-title">¿Qué es un láser?</h2>
           <p class="section-lead">
-            Un láser no es una lámpara más brillante: es luz organizada. La palabra resume el proceso
-            que la produce y explica por qué se comporta distinto a la luz de un foco.
+            El láser produce luz con características distintas a las de un foco: una banda muy estrecha
+            de longitudes de onda, una dirección definida y ondas coordinadas. Estas propiedades explican
+            por qué tiene tantas aplicaciones.
           </p>
         </header>
 
@@ -174,16 +127,16 @@
               el ultravioleta y el infrarrojo, aunque no los veamos.
             </p>
             <p>
-              Un láser es un dispositivo que produce luz con una frecuencia muy definida, en una dirección
-              preferente y con una relación de fase estable. Esa combinación es lo que lo vuelve útil para
-              leer un disco, cortar metal, imprimir una hoja o medir una distancia.
+              Un láser es un dispositivo que produce un haz de luz con una frecuencia muy definida, poca
+              dispersión y una relación de fase estable. Esa combinación permite utilizarlo para leer un
+              disco, cortar metal, imprimir una hoja o medir una distancia.
             </p>
 
             <div class="callout callout--key">
-              <p class="callout-title">La idea en una frase</p>
+              <p class="callout-title">Idea principal</p>
               <p>
-                El láser no inventa luz: toma luz que ya existe y la multiplica mediante emisión estimulada
-                dentro de una cavidad óptica.
+                El láser no crea luz de la nada: amplifica la energía que ya existe en el medio activo
+                mediante emisión estimulada dentro de una cavidad óptica.
               </p>
             </div>
 
@@ -194,7 +147,7 @@
             </p>
 
             <div class="callout callout--myth">
-              <p class="callout-title">Mito vs. realidad</p>
+              <p class="callout-title">Mito y realidad</p>
               <p>
                 <strong>“Todo láser es rojo y visible”.</strong> Falso. Hay láseres verdes, violetas,
                 ultravioleta e infrarrojo. El He-Ne de 632.8 nm es rojo, pero un láser de CO₂ emite en el
@@ -203,9 +156,9 @@
             </div>
 
             <p>
-              Tampoco todos los láseres son iguales: algunos son continuos, otros pulsados; unos usan gas,
-              otros cristales o semiconductores. Lo que comparten es el mecanismo básico que veremos en las
-              siguientes estaciones.
+              Tampoco todos los láseres son iguales: algunos son continuos y otros pulsados; unos usan gas,
+              otros cristales o semiconductores. Lo que comparten es el mecanismo básico que se explica en
+              los siguientes apartados.
             </p>
             <p class="sources">
               Fuentes: Nave (s. f.-b); Paschotta (s. f.-d); U.S. Food and Drug Administration (FDA, 2024).
@@ -263,11 +216,11 @@
     <section class="section section--tint" id="procesos" aria-labelledby="procesos-title">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker">02 · La materia y la luz</p>
-          <h2 id="procesos-title">Tres formas en que un átomo y un fotón se encuentran</h2>
+          <p class="section-kicker">02 · Luz y materia</p>
+          <h2 id="procesos-title">Interacción entre la luz y la materia</h2>
           <p class="section-lead">
-            Para entender el láser hay que mirar qué pasa cuando un fotón llega a un átomo. Solo hay tres
-            procesos importantes, y uno de ellos es el que multiplica la luz.
+            Cuando un fotón llega a un átomo pueden ocurrir tres procesos. Uno de ellos, la emisión
+            estimulada, es la base del funcionamiento del láser.
           </p>
         </header>
 
@@ -279,7 +232,7 @@
           </div>
 
           <div class="tab-panels">
-            <article class="process-panel is-active" role="tabpanel" id="panel-absorcion" aria-labelledby="tab-absorcion" tabindex="0">
+            <div class="process-panel is-active" role="tabpanel" id="panel-absorcion" aria-labelledby="tab-absorcion" tabindex="0">
               <div class="process-visual">
                 <svg viewBox="0 0 420 240" role="img" aria-labelledby="abs-title abs-desc">
                   <title id="abs-title">Absorción: el átomo sube de nivel y el fotón desaparece</title>
@@ -311,9 +264,9 @@
                 </p>
                 <p class="key-line"><strong>Qué cambia:</strong> el fotón se consume y el átomo queda excitado.</p>
               </div>
-            </article>
+            </div>
 
-            <article class="process-panel" role="tabpanel" id="panel-espontanea" aria-labelledby="tab-espontanea" tabindex="0" hidden>
+            <div class="process-panel" role="tabpanel" id="panel-espontanea" aria-labelledby="tab-espontanea" tabindex="0" hidden>
               <div class="process-visual">
                 <svg viewBox="0 0 420 240" role="img" aria-labelledby="esp-title esp-desc">
                   <title id="esp-title">Emisión espontánea: el átomo se relaja y emite en cualquier dirección</title>
@@ -346,9 +299,9 @@
                 </p>
                 <p class="key-line"><strong>Qué cambia:</strong> sale un fotón, pero no está coordinado con otros.</p>
               </div>
-            </article>
+            </div>
 
-            <article class="process-panel" role="tabpanel" id="panel-estimulada" aria-labelledby="tab-estimulada" tabindex="0" hidden>
+            <div class="process-panel" role="tabpanel" id="panel-estimulada" aria-labelledby="tab-estimulada" tabindex="0" hidden>
               <div class="process-visual">
                 <svg viewBox="0 0 420 240" role="img" aria-labelledby="est-title est-desc">
                   <title id="est-title">Emisión estimulada: un fotón provoca otro fotón idéntico</title>
@@ -381,14 +334,14 @@
                   absorbido, provoca que el átomo emita un segundo fotón con la misma frecuencia, fase y
                   dirección. Ahora hay dos fotones donde había uno.
                 </p>
-                <p class="key-line"><strong>Qué cambia:</strong> el fotón incidente no se pierde: se suma un clon. Ese es el efecto multiplicador del láser.</p>
+                <p class="key-line"><strong>Qué cambia:</strong> el fotón incidente no se pierde: se suma otro fotón idéntico. Ese es el efecto multiplicador del láser.</p>
               </div>
-            </article>
+            </div>
           </div>
         </div>
 
         <div class="callout callout--formula">
-          <p class="callout-title">La regla de oro</p>
+          <p class="callout-title">Condición para absorber o emitir</p>
           <p>
             Un átomo solo absorbe o emite un fotón si su energía coincide con la diferencia entre dos niveles:
             <span class="formula">E = hf = ΔE</span>. Si la energía no coincide, el fotón no es absorbido.
@@ -396,10 +349,10 @@
         </div>
 
         <div class="callout callout--warning">
-          <p class="callout-title">Ojo con la palabra “crear”</p>
+          <p class="callout-title">La energía no aparece de la nada</p>
           <p>
-            La emisión estimulada no crea energía de la nada: libera la energía que el átomo ya tenía
-            almacenada. El bombeo es lo que vuelve a excitar los átomos para que el proceso continúe.
+            La emisión estimulada libera la energía que el átomo ya tenía almacenada. El bombeo vuelve a
+            excitar los átomos para que el proceso continúe.
           </p>
         </div>
 
@@ -410,11 +363,11 @@
     <section class="section" id="receta" aria-labelledby="receta-title">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker">03 · La receta del láser</p>
-          <h2 id="receta-title">Cómo se amplifica la luz</h2>
+          <p class="section-kicker">03 · Funcionamiento</p>
+          <h2 id="receta-title">Cómo se produce la luz láser</h2>
           <p class="section-lead">
-            Un láser necesita tres ingredientes y una condición. Si falta uno, la luz no se amplifica:
-            se absorbe, se dispersa o se escapa.
+            Un láser necesita un medio activo, una fuente de energía, inversión de población y una
+            cavidad óptica. Si falta alguno de estos elementos, la luz no se amplifica.
           </p>
         </header>
 
@@ -453,14 +406,18 @@
         <div class="lab" id="laser-lab">
           <div class="lab-head">
             <div>
-              <p class="eyebrow">Laboratorio interactivo</p>
+              <p class="eyebrow">Actividad interactiva</p>
               <h3>Enciende el láser</h3>
             </div>
-            <span class="badge badge--warning">Modelo conceptual, no simulación numérica</span>
+            <span class="badge badge--warning">Representación simplificada</span>
           </div>
           <p class="lab-intro">
-            Sube el bombeo, alinea la cavidad y dispara un fotón. Observa qué condición falta y por qué.
-            La idea es razonar la cadena causal, no obtener un número.
+            Aumenta el bombeo, alinea los espejos y dispara un fotón. Observa qué condición falta para
+            que se produzca el haz y por qué.
+          </p>
+          <p class="lab-note">
+            Esta actividad representa el proceso de forma simplificada; no reproduce mediciones de un
+            láser real.
           </p>
           <noscript>
             <p class="callout callout--info">Activa JavaScript para usar el laboratorio interactivo. La explicación de arriba sigue disponible.</p>
@@ -564,7 +521,7 @@
 
           <div class="lab-footer">
             <div class="missions-wrap">
-              <p class="missions-title">Misiones</p>
+              <p class="missions-title">Pasos</p>
               <ol class="missions">
                 <li id="mission-inversion"><span class="mission-dot" aria-hidden="true"></span> Consigue la inversión de población</li>
                 <li id="mission-cavity"><span class="mission-dot" aria-hidden="true"></span> Alinea la cavidad</li>
@@ -572,15 +529,15 @@
               </ol>
             </div>
             <p class="lab-feedback" id="lab-feedback" aria-live="polite">
-              El medio está en reposo. Sube el bombeo para excitar átomos.
+              El medio está en reposo. Aumenta el bombeo para excitar átomos.
             </p>
           </div>
         </div>
 
         <div class="callout callout--warning">
-          <p class="callout-title">La cavidad no crea luz</p>
+          <p class="callout-title">Función de la cavidad</p>
           <p>
-            La cavidad obliga a la luz a pasar muchas veces por el medio para que la emisión estimulada se
+            La cavidad hace que la luz pase muchas veces por el medio para que la emisión estimulada se
             multiplique. Si los espejos no están alineados, los fotones escapan y no hay amplificación.
           </p>
         </div>
@@ -592,11 +549,11 @@
     <section class="section section--tint" id="propiedades" aria-labelledby="propiedades-title">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker">04 · La firma del láser</p>
+          <p class="section-kicker">04 · Propiedades</p>
           <h2 id="propiedades-title">Monocromaticidad, coherencia y direccionalidad</h2>
           <p class="section-lead">
-            La luz láser se describe con tres propiedades. No son absolutas: los láseres reales son
-            “casi” monocromáticos, “bastante” coherentes y “muy” direccionales.
+            La luz láser se describe con tres propiedades. Los láseres reales no son perfectos: son
+            casi monocromáticos, bastante coherentes y muy direccionales.
           </p>
         </header>
 
@@ -607,12 +564,12 @@
               <div class="spectrum spectrum--narrow"><span></span></div>
               <p class="mini-label">Una lámpara: muchas λ · Un láser: banda estrecha</p>
             </div>
-            <h3>Monochromaticidad</h3>
+            <h3>Monocromaticidad</h3>
             <p>
               El láser emite en una banda muy estrecha de longitudes de onda. No es un color perfecto:
               todo láser tiene un ancho espectral finito, así que en rigor es <em>cuasi-monocromático</em>.
             </p>
-            <p class="key-line"><strong>En una frase:</strong> casi un solo color.</p>
+            <p class="key-line"><strong>En resumen:</strong> una banda de color muy estrecha.</p>
           </article>
 
           <article class="property-card">
@@ -631,7 +588,7 @@
               Las ondas mantienen una relación de fase estable. La coherencia espacial se da a través del
               haz; la temporal, a lo largo del tiempo. Es lo que permite interferencia estable y enfoque fino.
             </p>
-            <p class="key-line"><strong>En una frase:</strong> las ondas “bailan al mismo ritmo”.</p>
+            <p class="key-line"><strong>En resumen:</strong> las ondas mantienen una relación de fase estable.</p>
           </article>
 
           <article class="property-card">
@@ -650,12 +607,12 @@
               El haz se dispersa poco y se puede enfocar en un punto muy pequeño. No es un rayo
               infinitamente delgado: tiene divergencia, pero mucha menor que la de una lámpara.
             </p>
-            <p class="key-line"><strong>En una frase:</strong> una flecha en lugar de una bombilla.</p>
+            <p class="key-line"><strong>En resumen:</strong> el haz se dispersa poco y puede enfocarse.</p>
           </article>
         </div>
 
         <div class="callout callout--myth">
-          <p class="callout-title">Tres mitos que conviene desarmar</p>
+          <p class="callout-title">Aclaraciones frecuentes</p>
           <ul>
             <li><strong>“Todo láser es perfectamente monocromático”.</strong> No: tiene un ancho espectral finito, aunque muy pequeño.</li>
             <li><strong>“Todo láser tiene la misma coherencia”.</strong> No: depende del diseño, del modo y de la estabilidad de la cavidad.</li>
@@ -667,7 +624,7 @@
           <table class="data-table">
             <caption>Qué propiedad se aprovecha en cada tipo de aplicación</caption>
             <thead>
-              <tr><th>Propiedad</th><th>En una frase</th><th>Dónde se aprovecha</th></tr>
+              <tr><th>Propiedad</th><th>Resumen</th><th>Dónde se aprovecha</th></tr>
             </thead>
             <tbody>
               <tr><td>Monocromaticidad</td><td>Banda estrecha de longitudes de onda</td><td>Comunicaciones WDM, sensores, almacenamiento óptico</td></tr>
@@ -684,11 +641,12 @@
     <section class="section" id="hene" aria-labelledby="hene-title">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker">05 · Un caso real</p>
+          <p class="section-kicker">05 · Ejemplo</p>
           <h2 id="hene-title">El láser de helio-neón y la energía de un fotón</h2>
           <p class="section-lead">
-            El He-Ne es un láser de gas muy usado en laboratorios y enseñanza. Su transición roja de
-            632.8 nm es un ejemplo claro de bombeo indirecto, inversión de población y cavidad óptica.
+            El láser de helio-neón es un láser de gas usado en laboratorios y en la enseñanza. Su
+            transición roja de 632.8 nm permite explicar el bombeo indirecto, la inversión de población
+            y la función de la cavidad óptica.
           </p>
         </header>
 
@@ -850,8 +808,8 @@
               <div><span>Energía</span><strong>1.96 eV</strong></div>
             </div>
             <p class="note">
-              Es la energía de <strong>un solo fotón</strong>. No es una medición: es un cálculo con el valor
-              nominal de 632.8 nm. Se usa la velocidad de la luz en el vacío; en el aire la diferencia es mínima.
+              Es la energía de <strong>un solo fotón</strong>. El resultado se calcula con el valor nominal
+              de 632.8 nm y la velocidad de la luz en el vacío; en el aire, la diferencia es mínima.
             </p>
           </article>
 
@@ -909,27 +867,27 @@
     <section class="section section--tint" id="aplicaciones" aria-labelledby="aplicaciones-title">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker">06 · El fotón sale al mundo</p>
-          <h2 id="aplicaciones-title">Aplicaciones: cada una aprovecha una propiedad distinta</h2>
+          <p class="section-kicker">06 · Aplicaciones</p>
+          <h2 id="aplicaciones-title">Aplicaciones del láser</h2>
           <p class="section-lead">
-            La pregunta útil no es solo “¿dónde se usa un láser?”, sino “¿qué propiedad del láser hace
-            posible ese uso?”. En las tarjetas, elige la propiedad principal y lee la explicación.
+            Cada aplicación aprovecha una propiedad distinta. En las siguientes tarjetas, elige la
+            propiedad principal de cada ejemplo y lee la explicación.
           </p>
         </header>
 
         <div class="detector-bar">
           <div>
-            <p class="eyebrow">Detector de propiedades</p>
+            <p class="eyebrow">Actividad de relación</p>
             <h3>¿Qué propiedad es la principal?</h3>
           </div>
           <div class="detector-actions">
             <p class="detector-score" id="detector-score" aria-live="polite">Aciertos: 0 / 6</p>
-            <button type="button" class="btn btn--ghost" id="detector-reset">Reiniciar detector</button>
+            <button type="button" class="btn btn--ghost" id="detector-reset">Reiniciar actividad</button>
           </div>
         </div>
 
         <noscript>
-          <p class="callout callout--info">Activa JavaScript para responder el detector; las tarjetas y sus notas siguen disponibles.</p>
+          <p class="callout callout--info">Activa JavaScript para responder la actividad; las tarjetas y sus notas siguen disponibles.</p>
         </noscript>
 
         <div class="app-grid">
@@ -1059,7 +1017,7 @@
         </div>
 
         <div class="callout callout--info">
-          <p class="callout-title">Y también: industria y medicina</p>
+          <p class="callout-title">Industria y medicina</p>
           <p>
             En corte, soldadura, marcado, cirugía y tratamientos médicos, la <strong>direccionalidad</strong>
             concentra energía en un punto. La potencia y la longitud de onda se eligen según el material o el
@@ -1086,11 +1044,11 @@
     <section class="section" id="seguridad" aria-labelledby="seguridad-title">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker">07 · Seguridad y cierre</p>
-          <h2 id="seguridad-title">La luz que hay que respetar</h2>
+          <p class="section-kicker">07 · Seguridad</p>
+          <h2 id="seguridad-title">Seguridad en el uso del láser</h2>
           <p class="section-lead">
-            La luz láser puede ser peligrosa porque el ojo enfoca el haz en la retina. La gravedad depende
-            de la clase, la potencia, la longitud de onda y el uso; no solo del color del haz.
+            El ojo puede enfocar el haz láser en la retina, por eso es importante seguir las medidas de
+            seguridad. El riesgo depende de la clase, la potencia, la longitud de onda y el uso del equipo.
           </p>
         </header>
 
@@ -1145,16 +1103,6 @@
           </p>
         </div>
 
-        <div class="callout callout--info">
-          <p class="callout-title">Para cerrar</p>
-          <p>
-            Un láser no es una lámpara más brillante: es luz organizada por emisión estimulada, inversión de
-            población y una cavidad. Esa organización es la que permite transportar datos, leer un disco,
-            imprimir, medir distancias o cortar con precisión. La física está detrás de la infraestructura
-            que usamos todos los días.
-          </p>
-        </div>
-
         <p class="sources">Fuentes: Occupational Safety and Health Administration (OSHA, s. f.-a); OSHA (s. f.-b); FDA (2024).</p>
       </div>
     </section>
@@ -1162,16 +1110,16 @@
     <section class="section section--tint" id="quiz" aria-labelledby="quiz-title">
       <div class="container container--narrow">
         <header class="section-head">
-          <p class="section-kicker">Comprueba lo que aprendiste</p>
-          <h2 id="quiz-title">Quiz de 5 preguntas</h2>
+          <p class="section-kicker">Actividades de repaso</p>
+          <h2 id="quiz-title">Preguntas de repaso</h2>
           <p class="section-lead">
-            No cuenta para calificación. Responde, comprueba y lee la explicación; si fallas, vuelve a la
-            estación correspondiente.
+            Responde las cinco preguntas, comprueba tus respuestas y lee la explicación. Si tienes dudas,
+            consulta el apartado correspondiente.
           </p>
         </header>
         <div id="quiz-root"></div>
         <noscript>
-          <p class="callout callout--info">Activa JavaScript para usar el quiz interactivo. El resto del contenido sigue disponible.</p>
+          <p class="callout callout--info">Activa JavaScript para usar el cuestionario interactivo. El resto del contenido sigue disponible.</p>
         </noscript>
       </div>
     </section>
@@ -1179,34 +1127,35 @@
     <section class="section" id="aporte" aria-labelledby="aporte-title">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker">Cierre · Aporte del equipo</p>
-          <h2 id="aporte-title">Convertimos el tema en un laboratorio que se puede razonar</h2>
+          <p class="section-kicker">Aporte del equipo</p>
+          <h2 id="aporte-title">Actividades para comprender la emisión láser</h2>
           <p class="section-lead">
-            No quisimos hacer solo una página bonita. Quisimos que el lector tuviera que tomar decisiones
-            y ver las consecuencias físicas de cada una.
+            Además de la explicación, preparamos actividades para poner a prueba lo aprendido y relacionar
+            la física con situaciones reales.
           </p>
         </header>
 
         <div class="aporte-grid">
           <div class="aporte-copy">
             <p>
-              La página no dice “la inversión de población es importante” y sigue. Obliga a subir el bombeo,
-              alinear la cavidad y disparar un fotón. Si algo falta, el laboratorio explica qué falta y por qué.
+              En el laboratorio se puede aumentar el bombeo, alinear la cavidad y disparar un fotón. Si falta
+              alguna condición, la actividad explica cuál es y por qué impide que aparezca el haz. Así, la
+              inversión de población y la cavidad se entienden como parte de un mismo proceso.
             </p>
             <p>
-              Ese es el aporte: un modelo interactivo que hace visible la cadena causal. Lo acompañamos de una
-              calculadora de fotones, un detector de propiedades y un quiz con retroalimentación para que el
-              aprendizaje no se quede en leer.
+              También incluimos una calculadora que relaciona longitud de onda, frecuencia y energía, un
+              ejercicio para identificar qué propiedad aprovecha cada aplicación, y un cuestionario con
+              explicaciones.
             </p>
             <p>
-              Además, el modo exposición permite que el equipo demuestre la página en 5-7 minutos, que es
-              exactamente lo que pide la actividad.
+              El modo exposición reúne las ideas principales de cada sección para presentar la página durante
+              la clase.
             </p>
             <div class="callout callout--key">
-              <p class="callout-title">En una frase</p>
+              <p class="callout-title">Nuestro aporte</p>
               <p>
-                <strong>Nuestro aporte es un laboratorio virtual guiado que convierte la emisión láser en
-                una cadena de decisiones y consecuencias, y un recorrido que permite demostrarlo en vivo.</strong>
+                El laboratorio interactivo, la calculadora y las actividades de repaso convierten los
+                conceptos de la emisión láser en ejercicios que se pueden probar y explicar en clase.
               </p>
             </div>
           </div>
@@ -1214,34 +1163,25 @@
           <div class="aporte-cards">
             <article class="aporte-card">
               <span class="aporte-icon" aria-hidden="true">01</span>
-              <h3>Laboratorio causal</h3>
-              <p>Tres misiones: inversión, cavidad y emisión. No es una animación decorativa: hay que razonar qué condición falta.</p>
+              <h3>Laboratorio interactivo</h3>
+              <p>Permite modificar el bombeo, alinear la cavidad y comprobar cuándo se produce el haz.</p>
             </article>
             <article class="aporte-card">
               <span class="aporte-icon" aria-hidden="true">02</span>
-              <h3>Ruta y modo exposición</h3>
-              <p>Nueve paradas con notas cortas, navegación con flechas y pantalla completa para la clase.</p>
+              <h3>Cálculo de la energía</h3>
+              <p>Relaciona la longitud de onda con la frecuencia y la energía de un fotón en joules y electrónvolts.</p>
             </article>
             <article class="aporte-card">
               <span class="aporte-icon" aria-hidden="true">03</span>
-              <h3>Calculadora de fotones</h3>
-              <p>De la longitud de onda a la frecuencia y a la energía en J y eV, con la sustitución a la vista.</p>
+              <h3>Propiedades y aplicaciones</h3>
+              <p>Pone a prueba la relación entre cada propiedad de la luz láser y su uso tecnológico.</p>
             </article>
             <article class="aporte-card">
               <span class="aporte-icon" aria-hidden="true">04</span>
-              <h3>Refuerzo activo</h3>
-              <p>Detector de propiedades y quiz con explicaciones para conectar la física con las aplicaciones.</p>
+              <h3>Repaso y exposición</h3>
+              <p>Incluye preguntas con retroalimentación y un recorrido breve para presentar el tema.</p>
             </article>
           </div>
-        </div>
-
-        <div class="callout callout--info">
-          <p class="callout-title">Qué no es esta página</p>
-          <p>
-            No es una simulación numérica de un láser real ni una práctica de laboratorio. Es un modelo
-            conceptual para entender qué condiciones hacen falta y cómo se relacionan. Los datos y cálculos
-            se apoyan en las fuentes citadas.
-          </p>
         </div>
       </div>
     </section>
@@ -1249,11 +1189,10 @@
     <section class="section section--tint" id="equipo" aria-labelledby="equipo-title">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker">Créditos</p>
-          <h2 id="equipo-title">El equipo</h2>
+          <p class="section-kicker">Equipo</p>
+          <h2 id="equipo-title">Integrantes</h2>
           <p class="section-lead">
-            Cuatro roles, una misma página. Cada integrante se encargó de una parte del recorrido y de
-            revisar el trabajo del equipo.
+            Integrantes del equipo y las partes en las que participó cada uno.
           </p>
         </header>
 
@@ -1262,26 +1201,26 @@
           <article class="team-card">
             <span class="team-avatar" aria-hidden="true">1</span>
             <h3>[Integrante 1]</h3>
-            <p class="team-role">Coordinación y narrativa</p>
-            <p class="team-area">Integró la ruta, revisó el contenido y armó el guion de exposición.</p>
+            <p class="team-role">Coordinación y contenido</p>
+            <p class="team-area">Organizó las secciones, revisó el contenido y preparó el guion de exposición.</p>
           </article>
           <article class="team-card">
             <span class="team-avatar" aria-hidden="true">2</span>
             <h3>[Integrante 2]</h3>
-            <p class="team-role">Fundamentos y He-Ne</p>
-            <p class="team-area">Revisó los procesos físicos, el caso He-Ne y el cálculo de energía.</p>
+            <p class="team-role">Fundamentos y ejemplo</p>
+            <p class="team-area">Revisó los procesos físicos, el láser de helio-neón y el cálculo de energía.</p>
           </article>
           <article class="team-card">
             <span class="team-avatar" aria-hidden="true">3</span>
             <h3>[Integrante 3]</h3>
             <p class="team-role">Desarrollo e interacción</p>
-            <p class="team-area">Construyó el laboratorio, la calculadora, el detector y el quiz.</p>
+            <p class="team-area">Elaboró el laboratorio, la calculadora y las actividades de repaso.</p>
           </article>
           <article class="team-card">
             <span class="team-avatar" aria-hidden="true">4</span>
             <h3>[Integrante 4]</h3>
             <p class="team-role">Aplicaciones, seguridad y fuentes</p>
-            <p class="team-area">Verificó las fuentes y armó las secciones de aplicaciones y seguridad.</p>
+            <p class="team-area">Revisó las fuentes y preparó las secciones de aplicaciones y seguridad.</p>
           </article>
         </div>
       </div>
@@ -1290,11 +1229,11 @@
     <section class="section" id="referencias" aria-labelledby="referencias-title">
       <div class="container container--narrow">
         <header class="section-head">
-          <p class="section-kicker">Investigación documental</p>
+          <p class="section-kicker">Fuentes consultadas</p>
           <h2 id="referencias-title">Referencias</h2>
           <p class="section-lead">
-            Fuentes institucionales y técnicas, en formato APA 7. Se consultaron en noviembre de 2026.
-            No se utilizó Wikipedia ni libros.
+            Fuentes institucionales y técnicas en formato APA 7, consultadas en noviembre de 2026.
+            No se utilizó Wikipedia como fuente.
           </p>
         </header>
 
@@ -1323,9 +1262,8 @@
         </ol>
 
         <p class="ref-note">
-          Las citas en el texto siguen el formato autor-fecha de APA 7. Los enlaces se verificaron durante
-          la elaboración de la página; si alguna dirección cambia, se puede localizar el título en el sitio
-          institucional correspondiente.
+          Las citas del texto utilizan el formato autor-fecha de APA 7. Los enlaces se consultaron durante
+          la elaboración de la página.
         </p>
       </div>
     </section>
@@ -1346,16 +1284,10 @@
       </div>
       <nav class="footer-links" aria-label="Enlaces del pie de página">
         <a href="#inicio">Inicio</a>
-        <a href="#como-funciona">Cómo funciona</a>
-        <a href="#quiz">Quiz</a>
         <a href="#aporte">Aporte del equipo</a>
-        <a href="#equipo">Equipo</a>
+        <a href="#equipo">Integrantes</a>
         <a href="#referencias">Referencias</a>
       </nav>
-      <p class="footer-note">
-        Hecho con HTML, CSS y JavaScript puro. Sin frameworks, sin CDN y sin conexión obligatoria.
-        Los modelos interactivos son didácticos, no simulaciones experimentales.
-      </p>
     </div>
   </footer>
 
@@ -1364,12 +1296,12 @@
       <div class="presenter-head">
         <div>
           <p class="eyebrow">Modo exposición</p>
-          <p class="presenter-progress" id="presenter-progress">Parada 1 de 9</p>
+          <p class="presenter-progress" id="presenter-progress">Sección 1 de 9</p>
         </div>
         <button type="button" class="icon-btn" id="presenter-close" aria-label="Cerrar modo exposición">×</button>
       </div>
       <h2 id="presenter-title">Portada</h2>
-      <p class="presenter-note" id="presenter-note">Empieza con la pregunta que abre la página: ¿qué tienen en común un escáner, la fibra y un LiDAR?</p>
+      <p class="presenter-note" id="presenter-note">Comienza con un ejemplo cotidiano: un lector de códigos, la fibra óptica o un sensor LiDAR. Todos utilizan luz láser.</p>
       <div class="presenter-actions">
         <button type="button" class="btn btn--ghost" id="presenter-prev">← Anterior</button>
         <a class="btn btn--secondary" id="presenter-go" href="#inicio">Ir a la sección</a>
@@ -1382,7 +1314,9 @@
     </div>
   </aside>
 
-  <a class="to-top" id="to-top" href="#inicio" aria-label="Volver arriba">↑</a>
+  <nav aria-label="Volver al inicio">
+    <a class="to-top" id="to-top" href="#inicio" aria-label="Volver arriba">↑</a>
+  </nav>
 
   <script defer src="./js/main.js"></script>
   <script defer src="./js/laser-lab.js"></script>
