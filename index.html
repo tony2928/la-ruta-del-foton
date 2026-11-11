@@ -1,0 +1,1393 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#0a1224">
+  <meta name="description" content="Página educativa interactiva sobre la emisión láser: fundamentos, laboratorio virtual, láser de helio-neón, aplicaciones y seguridad.">
+  <meta name="author" content="Equipo de Física — Ingeniería en Sistemas Computacionales">
+  <meta property="og:title" content="La ruta del fotón | Estudio y aplicación de la emisión láser">
+  <meta property="og:description" content="Una ruta interactiva para entender qué es un láser, cómo se amplifica la luz y dónde se usa.">
+  <meta property="og:type" content="website">
+  <title>La ruta del fotón | Estudio y aplicación de la emisión láser</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner container">
+      <a class="brand" href="#inicio" aria-label="La ruta del fotón, ir al inicio">
+        <span class="brand-mark" aria-hidden="true">λ</span>
+        <span class="brand-text">
+          <strong>La ruta del fotón</strong>
+          <small>Emisión láser</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Secciones principales">
+        <a href="#que-es">01 ¿Qué es?</a>
+        <a href="#procesos">02 Procesos</a>
+        <a href="#receta">03 Laboratorio</a>
+        <a href="#propiedades">04 Propiedades</a>
+        <a href="#hene">05 He-Ne</a>
+        <a href="#aplicaciones">06 Aplicaciones</a>
+        <a href="#seguridad">07 Seguridad</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn btn--presenter" id="presenter-toggle" aria-expanded="false" aria-controls="presenter">
+          Presentar
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <p class="eyebrow">Física · Unidad 3 · Ingeniería en Sistemas Computacionales</p>
+          <h1 id="hero-title">La ruta del <span class="text-laser">fotón</span></h1>
+          <p class="hero-subtitle">Estudio y aplicación de la emisión láser</p>
+          <p class="hero-lead">
+            Un escáner del súper, la fibra que te da internet y un sensor LiDAR comparten la misma física.
+            Vamos a seguir el viaje de un fotón para entender qué hace especial a la luz láser y cómo se usa
+            en tecnología real.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="#que-es">Comenzar la ruta</a>
+            <a class="btn btn--ghost" href="#receta">Ir al laboratorio</a>
+          </div>
+          <ul class="hero-meta" aria-label="Contenido de la página">
+            <li>7 estaciones</li>
+            <li>1 laboratorio interactivo</li>
+            <li>Fuentes verificables</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <svg class="hero-svg" viewBox="0 0 560 360" fill="none">
+            <defs>
+              <linearGradient id="hero-medium" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#f59e0b" stop-opacity=".18"/>
+                <stop offset=".5" stop-color="#e63946" stop-opacity=".62"/>
+                <stop offset="1" stop-color="#f59e0b" stop-opacity=".18"/>
+              </linearGradient>
+              <filter id="hero-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <pattern id="hero-grid" width="34" height="34" patternUnits="userSpaceOnUse">
+                <path d="M34 0H0V34" stroke="#fff" stroke-opacity=".045"/>
+              </pattern>
+            </defs>
+            <rect width="560" height="360" fill="url(#hero-grid)"/>
+            <rect x="48" y="104" width="14" height="152" rx="5" fill="#22d3ee" opacity=".9"/>
+            <rect x="498" y="104" width="14" height="152" rx="5" fill="#22d3ee" opacity=".55"/>
+            <rect x="160" y="116" width="240" height="128" rx="22" fill="url(#hero-medium)" stroke="#e63946" stroke-opacity=".35"/>
+            <line class="hero-beam-line" x1="62" y1="180" x2="520" y2="180" stroke="#e63946" stroke-width="3" filter="url(#hero-glow)" opacity=".92"/>
+            <line class="hero-output-line" x1="512" y1="180" x2="548" y2="180" stroke="#e63946" stroke-width="7" stroke-linecap="round" filter="url(#hero-glow)"/>
+            <g fill="#22d3ee">
+              <circle cx="210" cy="180" r="4"/>
+              <circle cx="260" cy="180" r="4"/>
+              <circle cx="310" cy="180" r="4"/>
+              <circle cx="360" cy="180" r="4"/>
+            </g>
+            <g stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".8">
+              <path d="M210 316V258"/><path d="M204 268L210 256L216 268"/>
+              <path d="M280 316V258"/><path d="M274 268L280 256L286 268"/>
+              <path d="M350 316V258"/><path d="M344 268L350 256L356 268"/>
+            </g>
+            <text x="160" y="282" fill="#d8e0ee" font-size="12" font-family="ui-monospace, monospace" letter-spacing="1">MEDIO ACTIVO</text>
+            <text x="48" y="92" fill="#9fb0c9" font-size="11" font-family="ui-monospace, monospace" letter-spacing="1">ESPEJO 100%</text>
+            <text x="430" y="92" fill="#9fb0c9" font-size="11" font-family="ui-monospace, monospace" letter-spacing="1">ESPEJO PARCIAL</text>
+            <text x="520" y="214" fill="#ff8a94" font-size="11" font-family="ui-monospace, monospace" letter-spacing="1">HAZ</text>
+          </svg>
+        </div>
+      </div>
+
+      <nav class="route-map container" aria-label="Mapa de la ruta">
+        <a href="#que-es"><span>01</span> ¿Qué es?</a>
+        <a href="#procesos"><span>02</span> Procesos</a>
+        <a href="#receta"><span>03</span> La receta</a>
+        <a href="#propiedades"><span>04</span> Propiedades</a>
+        <a href="#hene"><span>05</span> He-Ne</a>
+        <a href="#aplicaciones"><span>06</span> Aplicaciones</a>
+        <a href="#seguridad"><span>07</span> Seguridad</a>
+      </nav>
+    </section>
+
+    <section class="quick-guide container" id="como-funciona" aria-labelledby="quick-title">
+      <div class="quick-head">
+        <p class="eyebrow">Cómo funciona la página</p>
+        <h2 id="quick-title">Una ruta, tres interacciones y una demo para clase</h2>
+        <p>No es un documento para leer de corrido: es un recorrido para probar, predecir y comprobar.</p>
+      </div>
+      <div class="quick-grid">
+        <article class="quick-card">
+          <span class="quick-num">1</span>
+          <h3>Sigue la ruta</h3>
+          <p>Las siete estaciones van de la definición a las aplicaciones. Cada una responde una pregunta.</p>
+        </article>
+        <article class="quick-card">
+          <span class="quick-num">2</span>
+          <h3>Prueba los procesos</h3>
+          <p>Cambia entre absorción, emisión espontánea y emisión estimulada para ver qué pasa con el fotón.</p>
+        </article>
+        <article class="quick-card">
+          <span class="quick-num">3</span>
+          <h3>Enciende el láser</h3>
+          <p>Sube el bombeo, alinea la cavidad y dispara un fotón. El laboratorio te dice qué condición falta.</p>
+        </article>
+        <article class="quick-card">
+          <span class="quick-num">4</span>
+          <h3>Comprueba y conecta</h3>
+          <p>Resuelve el quiz, conecta aplicaciones con propiedades y revisa las fuentes al final.</p>
+        </article>
+      </div>
+      <div class="quick-note">
+        <span class="badge badge--info">Para exponer</span>
+        <p>Usa el botón <strong>Presentar</strong>: abre un panel con 9 paradas, notas cortas y navegación con flechas. El guion completo está en <code>docs/GUION.md</code>.</p>
+      </div>
+    </section>
+
+    <section class="section" id="que-es" aria-labelledby="que-es-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker">01 · Introducción</p>
+          <h2 id="que-es-title">¿Qué es un láser?</h2>
+          <p class="section-lead">
+            Un láser no es una lámpara más brillante: es luz organizada. La palabra resume el proceso
+            que la produce y explica por qué se comporta distinto a la luz de un foco.
+          </p>
+        </header>
+
+        <div class="split">
+          <div class="prose">
+            <p>
+              <strong>Láser</strong> es el acrónimo de <em>Light Amplification by Stimulated Emission of Radiation</em>:
+              amplificación de luz por emisión estimulada de radiación. En física, “luz” también incluye
+              el ultravioleta y el infrarrojo, aunque no los veamos.
+            </p>
+            <p>
+              Un láser es un dispositivo que produce luz con una frecuencia muy definida, en una dirección
+              preferente y con una relación de fase estable. Esa combinación es lo que lo vuelve útil para
+              leer un disco, cortar metal, imprimir una hoja o medir una distancia.
+            </p>
+
+            <div class="callout callout--key">
+              <p class="callout-title">La idea en una frase</p>
+              <p>
+                El láser no inventa luz: toma luz que ya existe y la multiplica mediante emisión estimulada
+                dentro de una cavidad óptica.
+              </p>
+            </div>
+
+            <p>
+              La diferencia con una fuente convencional no es solo “más potencia”. Un foco emite muchas
+              longitudes de onda, en todas direcciones y con fases desordenadas. Un láser emite una banda
+              estrecha, en una dirección preferente y con coherencia.
+            </p>
+
+            <div class="callout callout--myth">
+              <p class="callout-title">Mito vs. realidad</p>
+              <p>
+                <strong>“Todo láser es rojo y visible”.</strong> Falso. Hay láseres verdes, violetas,
+                ultravioleta e infrarrojo. El He-Ne de 632.8 nm es rojo, pero un láser de CO₂ emite en el
+                infrarrojo y no se ve.
+              </p>
+            </div>
+
+            <p>
+              Tampoco todos los láseres son iguales: algunos son continuos, otros pulsados; unos usan gas,
+              otros cristales o semiconductores. Lo que comparten es el mecanismo básico que veremos en las
+              siguientes estaciones.
+            </p>
+            <p class="sources">
+              Fuentes: Nave (s. f.-b); Paschotta (s. f.-d); U.S. Food and Drug Administration (FDA, 2024).
+            </p>
+          </div>
+
+          <figure class="figure compare-figure">
+            <div class="compare-grid">
+              <div class="compare-card compare-card--bulb">
+                <svg viewBox="0 0 240 160" aria-hidden="true">
+                  <circle cx="120" cy="68" r="22" fill="#f59e0b" opacity=".9"/>
+                  <g stroke="#f59e0b" stroke-width="3" stroke-linecap="round" opacity=".75">
+                    <path d="M120 30V14"/><path d="M120 106v16"/>
+                    <path d="M82 68H66"/><path d="M158 68h16"/>
+                    <path d="M93 41L82 30"/><path d="M147 41l11-11"/>
+                    <path d="M93 95l-11 11"/><path d="M147 95l11 11"/>
+                  </g>
+                  <g stroke="#22d3ee" stroke-width="2" opacity=".8">
+                    <path d="M72 120q12-10 24 0t24 0t24 0t24 0"/>
+                    <path d="M72 132q12-10 24 0t24 0t24 0t24 0"/>
+                  </g>
+                  <text x="120" y="152" text-anchor="middle" fill="#5b6577" font-size="11" font-family="ui-monospace, monospace">MUCHAS λ · MUCHAS DIRECCIONES</text>
+                </svg>
+                <h3>Una fuente convencional</h3>
+                <ul>
+                  <li>Muchas longitudes de onda</li>
+                  <li>Luz en todas direcciones</li>
+                  <li>Fases desordenadas</li>
+                </ul>
+              </div>
+
+              <div class="compare-card compare-card--laser">
+                <svg viewBox="0 0 240 160" aria-hidden="true">
+                  <rect x="86" y="48" width="56" height="58" rx="12" fill="#0a1224" stroke="#22d3ee" stroke-width="2"/>
+                  <rect x="100" y="62" width="28" height="30" rx="5" fill="#e63946" opacity=".28"/>
+                  <line x1="142" y1="77" x2="224" y2="77" stroke="#e63946" stroke-width="5" stroke-linecap="round"/>
+                  <line x1="86" y1="77" x2="52" y2="77" stroke="#e63946" stroke-width="2" opacity=".28"/>
+                  <circle cx="224" cy="77" r="5" fill="#e63946"/>
+                  <text x="120" y="152" text-anchor="middle" fill="#5b6577" font-size="11" font-family="ui-monospace, monospace">UNA λ · UNA DIRECCIÓN</text>
+                </svg>
+                <h3>Un láser</h3>
+                <ul>
+                  <li>Banda estrecha de longitudes de onda</li>
+                  <li>Haz en una dirección preferente</li>
+                  <li>Fases coordinadas</li>
+                </ul>
+              </div>
+            </div>
+            <figcaption>Representación esquemática. Los láseres reales no son perfectos, pero se acercan a este ideal.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="procesos" aria-labelledby="procesos-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker">02 · La materia y la luz</p>
+          <h2 id="procesos-title">Tres formas en que un átomo y un fotón se encuentran</h2>
+          <p class="section-lead">
+            Para entender el láser hay que mirar qué pasa cuando un fotón llega a un átomo. Solo hay tres
+            procesos importantes, y uno de ellos es el que multiplica la luz.
+          </p>
+        </header>
+
+        <div class="process-tabs">
+          <div class="tablist" role="tablist" aria-label="Procesos de interacción entre luz y materia">
+            <button type="button" class="tab" role="tab" id="tab-absorcion" aria-controls="panel-absorcion" aria-selected="true" tabindex="0">Absorción</button>
+            <button type="button" class="tab" role="tab" id="tab-espontanea" aria-controls="panel-espontanea" aria-selected="false" tabindex="-1">Emisión espontánea</button>
+            <button type="button" class="tab" role="tab" id="tab-estimulada" aria-controls="panel-estimulada" aria-selected="false" tabindex="-1">Emisión estimulada</button>
+          </div>
+
+          <div class="tab-panels">
+            <article class="process-panel is-active" role="tabpanel" id="panel-absorcion" aria-labelledby="tab-absorcion" tabindex="0">
+              <div class="process-visual">
+                <svg viewBox="0 0 420 240" role="img" aria-labelledby="abs-title abs-desc">
+                  <title id="abs-title">Absorción: el átomo sube de nivel y el fotón desaparece</title>
+                  <desc id="abs-desc">Un fotón con la energía correcta llega al átomo; el átomo pasa a un nivel superior.</desc>
+                  <defs>
+                    <marker id="arr-abs" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <path d="M0,0 L0,6 L9,3 z" fill="#b45309"/>
+                    </marker>
+                  </defs>
+                  <line x1="40" y1="190" x2="380" y2="190" stroke="#94a3b8" stroke-width="2"/>
+                  <line x1="40" y1="80" x2="380" y2="80" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
+                  <text x="40" y="212" fill="#5b6577" font-size="12" font-family="ui-monospace, monospace">NIVEL INFERIOR</text>
+                  <text x="40" y="68" fill="#5b6577" font-size="12" font-family="ui-monospace, monospace">NIVEL SUPERIOR</text>
+                  <path class="photon photon--in" d="M48 190q10-12 20 0t20 0t20 0t20 0t20 0t20 0t20 0" fill="none" stroke="#e63946" stroke-width="4" stroke-linecap="round"/>
+                  <g class="atom">
+                    <circle cx="230" cy="190" r="17" fill="#0e7490"/>
+                    <circle cx="230" cy="190" r="7" fill="#d8f3f7" opacity=".8"/>
+                  </g>
+                  <path class="absorb-arrow" d="M230 168V101" stroke="#b45309" stroke-width="3" marker-end="url(#arr-abs)" opacity=".9"/>
+                  <text x="58" y="178" fill="#b91c2a" font-size="12" font-family="ui-monospace, monospace">fotón</text>
+                  <text x="244" y="160" fill="#0e7490" font-size="12" font-family="ui-monospace, monospace">átomo</text>
+                </svg>
+              </div>
+              <div class="process-copy">
+                <h3>Absorción</h3>
+                <p>
+                  Un átomo en el nivel inferior recibe un fotón cuya energía coincide con la diferencia entre
+                  los dos niveles. El átomo absorbe esa energía, sube al nivel superior y el fotón desaparece.
+                </p>
+                <p class="key-line"><strong>Qué cambia:</strong> el fotón se consume y el átomo queda excitado.</p>
+              </div>
+            </article>
+
+            <article class="process-panel" role="tabpanel" id="panel-espontanea" aria-labelledby="tab-espontanea" tabindex="0" hidden>
+              <div class="process-visual">
+                <svg viewBox="0 0 420 240" role="img" aria-labelledby="esp-title esp-desc">
+                  <title id="esp-title">Emisión espontánea: el átomo se relaja y emite en cualquier dirección</title>
+                  <desc id="esp-desc">Un átomo excitado baja de nivel sin necesidad de otro fotón y emite un fotón en una dirección aleatoria.</desc>
+                  <defs>
+                    <marker id="arr-esp" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <path d="M0,0 L0,6 L9,3 z" fill="#b45309"/>
+                    </marker>
+                  </defs>
+                  <line x1="40" y1="190" x2="380" y2="190" stroke="#94a3b8" stroke-width="2"/>
+                  <line x1="40" y1="80" x2="380" y2="80" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
+                  <text x="40" y="212" fill="#5b6577" font-size="12" font-family="ui-monospace, monospace">NIVEL INFERIOR</text>
+                  <text x="40" y="68" fill="#5b6577" font-size="12" font-family="ui-monospace, monospace">NIVEL SUPERIOR</text>
+                  <g class="atom atom--spont">
+                    <circle cx="210" cy="80" r="17" fill="#0e7490"/>
+                    <circle cx="210" cy="80" r="7" fill="#d8f3f7" opacity=".8"/>
+                  </g>
+                  <path class="spont-arrow" d="M210 102v67" stroke="#b45309" stroke-width="3" marker-end="url(#arr-esp)" opacity=".9"/>
+                  <path class="photon photon--out" d="M232 68q18-18 38-24t38-12" fill="none" stroke="#e63946" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M300 28l12-3-4 12" fill="none" stroke="#e63946" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <text x="250" y="18" fill="#b91c2a" font-size="12" font-family="ui-monospace, monospace">fotón aleatorio</text>
+                </svg>
+              </div>
+              <div class="process-copy">
+                <h3>Emisión espontánea</h3>
+                <p>
+                  Un átomo excitado se relaja por su cuenta y emite un fotón. La dirección, la fase y el
+                  instante son aleatorios: no hay un fotón que lo provoque. Es lo que ocurre en un LED o en
+                  una lámpara fluorescente.
+                </p>
+                <p class="key-line"><strong>Qué cambia:</strong> sale un fotón, pero no está coordinado con otros.</p>
+              </div>
+            </article>
+
+            <article class="process-panel" role="tabpanel" id="panel-estimulada" aria-labelledby="tab-estimulada" tabindex="0" hidden>
+              <div class="process-visual">
+                <svg viewBox="0 0 420 240" role="img" aria-labelledby="est-title est-desc">
+                  <title id="est-title">Emisión estimulada: un fotón provoca otro fotón idéntico</title>
+                  <desc id="est-desc">Un fotón incidente hace que un átomo excitado emita un segundo fotón con la misma frecuencia, fase y dirección.</desc>
+                  <defs>
+                    <marker id="arr-est" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <path d="M0,0 L0,6 L9,3 z" fill="#b45309"/>
+                    </marker>
+                  </defs>
+                  <line x1="40" y1="190" x2="380" y2="190" stroke="#94a3b8" stroke-width="2"/>
+                  <line x1="40" y1="80" x2="380" y2="80" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
+                  <text x="40" y="212" fill="#5b6577" font-size="12" font-family="ui-monospace, monospace">NIVEL INFERIOR</text>
+                  <text x="40" y="68" fill="#5b6577" font-size="12" font-family="ui-monospace, monospace">NIVEL SUPERIOR</text>
+                  <path class="photon photon--in" d="M48 80q10-12 20 0t20 0t20 0t20 0t20 0t20 0t20 0" fill="none" stroke="#e63946" stroke-width="4" stroke-linecap="round"/>
+                  <g class="atom atom--stim">
+                    <circle cx="230" cy="80" r="17" fill="#0e7490"/>
+                    <circle cx="230" cy="80" r="7" fill="#d8f3f7" opacity=".8"/>
+                  </g>
+                  <path class="stim-arrow" d="M230 102v67" stroke="#b45309" stroke-width="3" marker-end="url(#arr-est)" opacity=".9"/>
+                  <path class="photon photon--out-a" d="M246 66q16 0 30-6t34-10" fill="none" stroke="#e63946" stroke-width="4" stroke-linecap="round"/>
+                  <path class="photon photon--out-b" d="M246 94q16 0 30 6t34 10" fill="none" stroke="#e63946" stroke-width="4" stroke-linecap="round"/>
+                  <text x="58" y="108" fill="#b91c2a" font-size="12" font-family="ui-monospace, monospace">fotón incidente</text>
+                  <text x="262" y="50" fill="#b91c2a" font-size="12" font-family="ui-monospace, monospace">dos fotones idénticos</text>
+                </svg>
+              </div>
+              <div class="process-copy">
+                <h3>Emisión estimulada</h3>
+                <p>
+                  Un fotón con la energía correcta se encuentra con un átomo ya excitado. En lugar de ser
+                  absorbido, provoca que el átomo emita un segundo fotón con la misma frecuencia, fase y
+                  dirección. Ahora hay dos fotones donde había uno.
+                </p>
+                <p class="key-line"><strong>Qué cambia:</strong> el fotón incidente no se pierde: se suma un clon. Ese es el efecto multiplicador del láser.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="callout callout--formula">
+          <p class="callout-title">La regla de oro</p>
+          <p>
+            Un átomo solo absorbe o emite un fotón si su energía coincide con la diferencia entre dos niveles:
+            <span class="formula">E = hf = ΔE</span>. Si la energía no coincide, el fotón no es absorbido.
+          </p>
+        </div>
+
+        <div class="callout callout--warning">
+          <p class="callout-title">Ojo con la palabra “crear”</p>
+          <p>
+            La emisión estimulada no crea energía de la nada: libera la energía que el átomo ya tenía
+            almacenada. El bombeo es lo que vuelve a excitar los átomos para que el proceso continúe.
+          </p>
+        </div>
+
+        <p class="sources">Fuentes: Nave (s. f.-b); Paschotta (s. f.-g).</p>
+      </div>
+    </section>
+
+    <section class="section" id="receta" aria-labelledby="receta-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker">03 · La receta del láser</p>
+          <h2 id="receta-title">Cómo se amplifica la luz</h2>
+          <p class="section-lead">
+            Un láser necesita tres ingredientes y una condición. Si falta uno, la luz no se amplifica:
+            se absorbe, se dispersa o se escapa.
+          </p>
+        </header>
+
+        <div class="ingredient-grid">
+          <article class="ingredient-card">
+            <span class="ingredient-num">01</span>
+            <h3>Medio activo</h3>
+            <p>Átomos, iones o moléculas capaces de emitir luz. En el He-Ne, es una mezcla de helio y neón a baja presión.</p>
+          </article>
+          <article class="ingredient-card">
+            <span class="ingredient-num">02</span>
+            <h3>Bombeo</h3>
+            <p>Energía externa que lleva a los átomos al estado excitado: una descarga eléctrica, otra luz o una corriente.</p>
+          </article>
+          <article class="ingredient-card">
+            <span class="ingredient-num">03</span>
+            <h3>Inversión de población</h3>
+            <p>Más átomos en el nivel superior que en el inferior. Sin esto, la absorción gana y no hay amplificación neta.</p>
+          </article>
+          <article class="ingredient-card">
+            <span class="ingredient-num">04</span>
+            <h3>Cavidad óptica</h3>
+            <p>Dos espejos: uno refleja casi todo y el otro es parcialmente reflectante. La luz pasa muchas veces por el medio y parte sale como haz.</p>
+          </article>
+        </div>
+
+        <div class="callout callout--key">
+          <p class="callout-title">El umbral</p>
+          <p>
+            Para que haya láser, la <strong>ganancia</strong> de la emisión estimulada debe superar las
+            <strong>pérdidas</strong> de la cavidad: espejos imperfectos, dispersión, absorción y la propia
+            luz que sale. Ese punto se llama umbral.
+          </p>
+        </div>
+
+        <div class="lab" id="laser-lab">
+          <div class="lab-head">
+            <div>
+              <p class="eyebrow">Laboratorio interactivo</p>
+              <h3>Enciende el láser</h3>
+            </div>
+            <span class="badge badge--warning">Modelo conceptual, no simulación numérica</span>
+          </div>
+          <p class="lab-intro">
+            Sube el bombeo, alinea la cavidad y dispara un fotón. Observa qué condición falta y por qué.
+            La idea es razonar la cadena causal, no obtener un número.
+          </p>
+          <noscript>
+            <p class="callout callout--info">Activa JavaScript para usar el laboratorio interactivo. La explicación de arriba sigue disponible.</p>
+          </noscript>
+
+          <div class="lab-grid">
+            <div class="lab-controls">
+              <div class="control">
+                <label for="pump">Bombeo de energía <output id="pump-value" for="pump">0%</output></label>
+                <input type="range" id="pump" min="0" max="100" step="1" value="0" aria-describedby="pump-hint">
+                <p class="control-hint" id="pump-hint">Sube el bombeo para excitar el medio activo.</p>
+              </div>
+
+              <div class="control-buttons">
+                <button type="button" class="btn btn--secondary" id="align-btn" aria-pressed="false">Alinear cavidad</button>
+                <button type="button" class="btn btn--primary" id="fire-btn">Disparar fotón</button>
+                <button type="button" class="btn btn--ghost" id="reset-lab">Reiniciar</button>
+              </div>
+
+              <div class="lab-legend">
+                <p><span class="legend-dot legend-dot--pump"></span> Bombeo</p>
+                <p><span class="legend-dot legend-dot--photon"></span> Fotón</p>
+                <p><span class="legend-dot legend-dot--beam"></span> Haz de salida</p>
+              </div>
+            </div>
+
+            <div class="lab-stage">
+              <div class="lab-visual" id="lab-visual">
+                <svg viewBox="0 0 760 300" role="img" aria-labelledby="lab-svg-title lab-svg-desc">
+                  <title id="lab-svg-title">Cavidad láser conceptual</title>
+                  <desc id="lab-svg-desc">
+                    Un medio activo entre dos espejos. El bombeo excita el medio; si hay inversión y la cavidad está
+                    alineada, un fotón dispara la emisión estimulada y sale un haz por el espejo parcial.
+                  </desc>
+                  <defs>
+                    <linearGradient id="lab-medium" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0" stop-color="#94a3b8" stop-opacity=".18"/>
+                      <stop offset=".5" stop-color="#94a3b8" stop-opacity=".35"/>
+                      <stop offset="1" stop-color="#94a3b8" stop-opacity=".18"/>
+                    </linearGradient>
+                    <filter id="lab-glow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="5" result="b"/>
+                      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                  </defs>
+                  <rect x="24" y="24" width="712" height="252" rx="18" fill="#0a1224" opacity=".04"/>
+                  <g class="pump-arrows" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M220 270V224"/><path d="M214 234L220 222L226 234"/>
+                    <path d="M320 270V224"/><path d="M314 234L320 222L326 234"/>
+                    <path d="M420 270V224"/><path d="M414 234L420 222L426 234"/>
+                  </g>
+                  <text x="220" y="290" fill="#b45309" font-size="11" font-family="ui-monospace, monospace" letter-spacing="1">BOMBEO</text>
+
+                  <rect class="medium" x="180" y="90" width="400" height="120" rx="20" fill="url(#lab-medium)" stroke="#94a3b8" stroke-opacity=".5"/>
+                  <text x="380" y="124" text-anchor="middle" fill="#334155" font-size="12" font-family="ui-monospace, monospace" letter-spacing="1.5">MEDIO ACTIVO</text>
+
+                  <g class="mirror mirror--left">
+                    <rect x="60" y="80" width="14" height="140" rx="5" fill="#0e7490"/>
+                    <text x="67" y="70" text-anchor="middle" fill="#0e7490" font-size="10" font-family="ui-monospace, monospace">100%</text>
+                  </g>
+
+                  <g class="mirror mirror--right">
+                    <rect x="600" y="80" width="14" height="140" rx="5" fill="#0e7490" opacity=".7"/>
+                    <line x1="607" y1="88" x2="607" y2="212" stroke="#f8fafc" stroke-width="2" stroke-dasharray="4 4" opacity=".8"/>
+                    <text x="607" y="70" text-anchor="middle" fill="#0e7490" font-size="10" font-family="ui-monospace, monospace">PARCIAL</text>
+                  </g>
+
+                  <line class="beam-inside" x1="74" y1="150" x2="600" y2="150" stroke="#e63946" stroke-width="3" opacity=".55"/>
+                  <line class="beam" x1="614" y1="150" x2="724" y2="150" stroke="#e63946" stroke-width="7" stroke-linecap="round" filter="url(#lab-glow)"/>
+                  <text class="beam-label" x="650" y="182" fill="#b91c2a" font-size="11" font-family="ui-monospace, monospace" letter-spacing="1">HAZ</text>
+
+                  <g class="lab-photons" aria-hidden="true">
+                    <circle class="lab-photon" cx="190" cy="150" r="5" fill="#e63946"/>
+                    <circle class="lab-photon" cx="190" cy="150" r="5" fill="#e63946"/>
+                    <circle class="lab-photon" cx="190" cy="150" r="5" fill="#e63946"/>
+                    <circle class="lab-photon" cx="190" cy="150" r="5" fill="#e63946"/>
+                    <circle class="lab-photon" cx="190" cy="150" r="5" fill="#e63946"/>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="lab-readouts" aria-label="Poblaciones y estado del láser">
+                <div class="readout">
+                  <span class="readout-label">N₂ · nivel superior</span>
+                  <div class="bar"><span id="n2-bar"></span></div>
+                  <output id="n2-value">0</output>
+                </div>
+                <div class="readout">
+                  <span class="readout-label">N₁ · nivel inferior</span>
+                  <div class="bar bar--lower"><span id="n1-bar"></span></div>
+                  <output id="n1-value">100</output>
+                </div>
+                <div class="status-row">
+                  <span class="status-pill" id="inversion-status">Sin inversión</span>
+                  <span class="status-pill" id="cavity-status">Cavidad desalineada</span>
+                  <span class="status-pill" id="laser-status">Láser apagado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lab-footer">
+            <div class="missions-wrap">
+              <p class="missions-title">Misiones</p>
+              <ol class="missions">
+                <li id="mission-inversion"><span class="mission-dot" aria-hidden="true"></span> Consigue la inversión de población</li>
+                <li id="mission-cavity"><span class="mission-dot" aria-hidden="true"></span> Alinea la cavidad</li>
+                <li id="mission-laser"><span class="mission-dot" aria-hidden="true"></span> Enciende el láser</li>
+              </ol>
+            </div>
+            <p class="lab-feedback" id="lab-feedback" aria-live="polite">
+              El medio está en reposo. Sube el bombeo para excitar átomos.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout callout--warning">
+          <p class="callout-title">La cavidad no crea luz</p>
+          <p>
+            La cavidad obliga a la luz a pasar muchas veces por el medio para que la emisión estimulada se
+            multiplique. Si los espejos no están alineados, los fotones escapan y no hay amplificación.
+          </p>
+        </div>
+
+        <p class="sources">Fuentes: Paschotta (s. f.-f); Nave (s. f.-a); U.S. Food and Drug Administration (FDA, 2024).</p>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="propiedades" aria-labelledby="propiedades-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker">04 · La firma del láser</p>
+          <h2 id="propiedades-title">Monocromaticidad, coherencia y direccionalidad</h2>
+          <p class="section-lead">
+            La luz láser se describe con tres propiedades. No son absolutas: los láseres reales son
+            “casi” monocromáticos, “bastante” coherentes y “muy” direccionales.
+          </p>
+        </header>
+
+        <div class="property-grid">
+          <article class="property-card">
+            <div class="property-visual" aria-hidden="true">
+              <div class="spectrum spectrum--broad"></div>
+              <div class="spectrum spectrum--narrow"><span></span></div>
+              <p class="mini-label">Una lámpara: muchas λ · Un láser: banda estrecha</p>
+            </div>
+            <h3>Monochromaticidad</h3>
+            <p>
+              El láser emite en una banda muy estrecha de longitudes de onda. No es un color perfecto:
+              todo láser tiene un ancho espectral finito, así que en rigor es <em>cuasi-monocromático</em>.
+            </p>
+            <p class="key-line"><strong>En una frase:</strong> casi un solo color.</p>
+          </article>
+
+          <article class="property-card">
+            <div class="property-visual" aria-hidden="true">
+              <svg viewBox="0 0 280 112" class="wave-svg">
+                <path d="M6 30q12-22 24 0t24 0t24 0t24 0t24 0t24 0t24 0t24 0t24 0t24 0" fill="none" stroke="#0e7490" stroke-width="3"/>
+                <path d="M6 30q12-22 24 0t24 0t24 0t24 0t24 0t24 0t24 0t24 0t24 0t24 0" fill="none" stroke="#e63946" stroke-width="3" opacity=".65"/>
+                <text x="6" y="14" fill="#5b6577" font-size="10" font-family="ui-monospace, monospace">EN FASE</text>
+                <path d="M6 84q12-22 24 0t24 0t24 0t24 0t24 0t24 0t24 0t24 0t24 0t24 0" fill="none" stroke="#0e7490" stroke-width="3" opacity=".7"/>
+                <path d="M6 84q12 20 24 0t24-10t24 12t24-16t24 8t24-12t24 14t24-8t24 6t24-10" fill="none" stroke="#e63946" stroke-width="3" opacity=".55"/>
+                <text x="6" y="68" fill="#5b6577" font-size="10" font-family="ui-monospace, monospace">DESORDENADO</text>
+              </svg>
+            </div>
+            <h3>Coherencia</h3>
+            <p>
+              Las ondas mantienen una relación de fase estable. La coherencia espacial se da a través del
+              haz; la temporal, a lo largo del tiempo. Es lo que permite interferencia estable y enfoque fino.
+            </p>
+            <p class="key-line"><strong>En una frase:</strong> las ondas “bailan al mismo ritmo”.</p>
+          </article>
+
+          <article class="property-card">
+            <div class="property-visual" aria-hidden="true">
+              <svg viewBox="0 0 280 112" class="beam-svg">
+                <path d="M12 56L86 18V94Z" fill="#f59e0b" opacity=".18"/>
+                <path d="M12 56L86 34V78Z" fill="#f59e0b" opacity=".35"/>
+                <line x1="140" y1="56" x2="266" y2="56" stroke="#e63946" stroke-width="4" stroke-linecap="round"/>
+                <line x1="140" y1="56" x2="266" y2="56" stroke="#e63946" stroke-width="10" stroke-linecap="round" opacity=".18"/>
+                <text x="12" y="108" fill="#5b6577" font-size="10" font-family="ui-monospace, monospace">FOCO: SE ABRE</text>
+                <text x="140" y="108" fill="#5b6577" font-size="10" font-family="ui-monospace, monospace">LÁSER: SE ABRE POCO</text>
+              </svg>
+            </div>
+            <h3>Direccionalidad</h3>
+            <p>
+              El haz se dispersa poco y se puede enfocar en un punto muy pequeño. No es un rayo
+              infinitamente delgado: tiene divergencia, pero mucha menor que la de una lámpara.
+            </p>
+            <p class="key-line"><strong>En una frase:</strong> una flecha en lugar de una bombilla.</p>
+          </article>
+        </div>
+
+        <div class="callout callout--myth">
+          <p class="callout-title">Tres mitos que conviene desarmar</p>
+          <ul>
+            <li><strong>“Todo láser es perfectamente monocromático”.</strong> No: tiene un ancho espectral finito, aunque muy pequeño.</li>
+            <li><strong>“Todo láser tiene la misma coherencia”.</strong> No: depende del diseño, del modo y de la estabilidad de la cavidad.</li>
+            <li><strong>“El haz no se dispersa”.</strong> Se dispersa poco; la divergencia existe y crece con la distancia.</li>
+          </ul>
+        </div>
+
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de propiedades de la luz láser">
+          <table class="data-table">
+            <caption>Qué propiedad se aprovecha en cada tipo de aplicación</caption>
+            <thead>
+              <tr><th>Propiedad</th><th>En una frase</th><th>Dónde se aprovecha</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Monocromaticidad</td><td>Banda estrecha de longitudes de onda</td><td>Comunicaciones WDM, sensores, almacenamiento óptico</td></tr>
+              <tr><td>Coherencia</td><td>Fase estable en el espacio y el tiempo</td><td>Interferometría, holografía, detección coherente</td></tr>
+              <tr><td>Direccionalidad</td><td>Poca divergencia y buena focalización</td><td>Corte, impresión, LiDAR, lectores de códigos</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="sources">Fuentes: Paschotta (s. f.-a); Paschotta (s. f.-e); Paschotta (s. f.-d).</p>
+      </div>
+    </section>
+
+    <section class="section" id="hene" aria-labelledby="hene-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker">05 · Un caso real</p>
+          <h2 id="hene-title">El láser de helio-neón y la energía de un fotón</h2>
+          <p class="section-lead">
+            El He-Ne es un láser de gas muy usado en laboratorios y enseñanza. Su transición roja de
+            632.8 nm es un ejemplo claro de bombeo indirecto, inversión de población y cavidad óptica.
+          </p>
+        </header>
+
+        <div class="hene-grid">
+          <figure class="figure hene-figure">
+            <svg viewBox="0 0 760 360" role="img" aria-labelledby="hene-svg-title hene-svg-desc">
+              <title id="hene-svg-title">Esquema simplificado del láser de helio-neón</title>
+              <desc id="hene-svg-desc">
+                El helio se excita con una descarga eléctrica, transfiere energía al neón, y el neón emite
+                un fotón de 632.8 nanómetros al bajar de nivel. Los espejos amplifican la luz.
+              </desc>
+              <rect x="20" y="20" width="720" height="320" rx="18" fill="#f8fafc" stroke="#d9d5c9"/>
+              <text x="56" y="58" fill="#0e7490" font-size="14" font-family="ui-monospace, monospace" letter-spacing="1.5">HELIO</text>
+              <text x="520" y="58" fill="#b91c2a" font-size="14" font-family="ui-monospace, monospace" letter-spacing="1.5">NEÓN</text>
+
+              <line x1="56" y1="290" x2="250" y2="290" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="56" y1="120" x2="250" y2="120" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
+              <text x="56" y="312" fill="#5b6577" font-size="11" font-family="ui-monospace, monospace">estado base</text>
+              <text x="56" y="108" fill="#5b6577" font-size="11" font-family="ui-monospace, monospace">metaestable ≈ 20.61 eV</text>
+
+              <line x1="520" y1="290" x2="710" y2="290" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="520" y1="120" x2="710" y2="120" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
+              <line x1="520" y1="220" x2="710" y2="220" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
+              <text x="520" y="312" fill="#5b6577" font-size="11" font-family="ui-monospace, monospace">estado base</text>
+              <text x="520" y="108" fill="#5b6577" font-size="11" font-family="ui-monospace, monospace">nivel superior ≈ 20.66 eV</text>
+              <text x="520" y="242" fill="#5b6577" font-size="11" font-family="ui-monospace, monospace">nivel inferior</text>
+
+              <g stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M150 278V148"/>
+                <path d="M142 160L150 144L158 160"/>
+              </g>
+              <text x="164" y="210" fill="#b45309" font-size="12" font-family="ui-monospace, monospace">descarga</text>
+              <text x="164" y="226" fill="#b45309" font-size="12" font-family="ui-monospace, monospace">eléctrica</text>
+
+              <g stroke="#0e7490" stroke-width="3" stroke-dasharray="7 6" fill="none">
+                <path d="M250 120H500"/>
+                <path d="M488 112L504 120L488 128"/>
+              </g>
+              <text x="300" y="104" fill="#0e7490" font-size="12" font-family="ui-monospace, monospace">colisión: He → Ne</text>
+
+              <g class="hene-emission" stroke="#e63946" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M620 144V196"/>
+                <path d="M612 184L620 200L628 184"/>
+              </g>
+              <text x="636" y="176" fill="#b91c2a" font-size="12" font-family="ui-monospace, monospace">632.8 nm</text>
+
+              <g stroke="#0e7490" stroke-width="2" stroke-dasharray="5 5" fill="none">
+                <path d="M620 230V278"/>
+                <path d="M614 268L620 282L626 268"/>
+              </g>
+              <text x="636" y="258" fill="#0e7490" font-size="11" font-family="ui-monospace, monospace">se vacía rápido</text>
+
+              <path class="hene-photon" d="M700 176q18-14 34 0t34 0t34 0" fill="none" stroke="#e63946" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+              <text x="700" y="152" fill="#b91c2a" font-size="11" font-family="ui-monospace, monospace">fotón rojo</text>
+
+              <text x="56" y="336" fill="#5b6577" font-size="11" font-family="ui-monospace, monospace">Esquema simplificado: no se muestran todos los niveles del neón.</text>
+            </svg>
+            <figcaption>
+              El helio absorbe la energía y se la pasa al neón. El neón es el que emite el fotón de 632.8 nm.
+            </figcaption>
+          </figure>
+
+          <div class="prose">
+            <ol class="steps">
+              <li>
+                <span class="step-num">1</span>
+                <div>
+                  <h3>Se excita el helio</h3>
+                  <p>La descarga eléctrica lleva átomos de helio a un estado metaestable de aproximadamente 20.61 eV.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num">2</span>
+                <div>
+                  <h3>El helio transfiere energía al neón</h3>
+                  <p>En una colisión, el helio pasa su energía a un átomo de neón, que queda en un nivel cercano a 20.66 eV.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num">3</span>
+                <div>
+                  <h3>El neón emite por emisión estimulada</h3>
+                  <p>La transición del neón a un nivel inferior produce fotones de 632.8 nm. El nivel inferior se vacía rápido y la inversión se mantiene.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num">4</span>
+                <div>
+                  <h3>La cavidad amplifica y deja salir el haz</h3>
+                  <p>Los espejos hacen que la luz pase muchas veces por el gas. El espejo parcialmente reflectante deja salir el haz rojo.</p>
+                </div>
+              </li>
+            </ol>
+
+            <div class="callout callout--myth">
+              <p class="callout-title">No confundir</p>
+              <p>
+                El helio <strong>no</strong> es el que emite el láser: transfiere energía al neón. El neón
+                es el que produce los fotones de 632.8 nm.
+              </p>
+            </div>
+
+            <div class="callout callout--info">
+              <p class="callout-title">Datos del He-Ne</p>
+              <p>
+                Mezcla de helio y neón a baja presión, salida continua y potencia típica de 0.5 a 30 mW.
+                Es muy usado en laboratorios, alineación y enseñanza por su haz estable y de buena calidad.
+              </p>
+            </div>
+
+            <p class="sources">Fuentes: Nave (s. f.-a); Paschotta (s. f.-b); SPIE (s. f.); Thorlabs (s. f.).</p>
+          </div>
+        </div>
+
+        <div class="calc-layout">
+          <article class="worked-example">
+            <p class="eyebrow">Ejemplo resuelto</p>
+            <h3>La energía de un fotón de 632.8 nm</h3>
+            <div class="formula-box" aria-label="Fórmulas usadas">
+              <span>c = λf</span>
+              <span>E = hf</span>
+              <span>E = hc/λ</span>
+            </div>
+
+            <ol class="calc-steps">
+              <li>
+                <span class="step-num">1</span>
+                <div>
+                  <p>Convierte la longitud de onda a metros:</p>
+                  <p class="math">λ = 632.8 nm = 6.328 × 10<sup>-7</sup> m</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num">2</span>
+                <div>
+                  <p>Calcula la frecuencia:</p>
+                  <p class="math">f = c/λ = (2.998 × 10<sup>8</sup> m/s) / (6.328 × 10<sup>-7</sup> m) = 4.74 × 10<sup>14</sup> Hz</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num">3</span>
+                <div>
+                  <p>Calcula la energía:</p>
+                  <p class="math">E = hf = (6.626 × 10<sup>-34</sup> J·s)(4.74 × 10<sup>14</sup> Hz) = 3.14 × 10<sup>-19</sup> J</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num">4</span>
+                <div>
+                  <p>Convierte a electronvoltios:</p>
+                  <p class="math">E = 3.14 × 10<sup>-19</sup> J × (1 eV / 1.602 × 10<sup>-19</sup> J) = 1.96 eV</p>
+                </div>
+              </li>
+            </ol>
+
+            <div class="result-grid">
+              <div><span>Frecuencia</span><strong>4.74 × 10<sup>14</sup> Hz</strong></div>
+              <div><span>Energía</span><strong>3.14 × 10<sup>-19</sup> J</strong></div>
+              <div><span>Energía</span><strong>1.96 eV</strong></div>
+            </div>
+            <p class="note">
+              Es la energía de <strong>un solo fotón</strong>. No es una medición: es un cálculo con el valor
+              nominal de 632.8 nm. Se usa la velocidad de la luz en el vacío; en el aire la diferencia es mínima.
+            </p>
+          </article>
+
+          <article class="calculator-card" id="photon-calculator">
+            <div class="calc-card-head">
+              <p class="eyebrow">Calculadora</p>
+              <h3>¿Cuánta energía lleva un fotón?</h3>
+              <p>Mueve la longitud de onda o elige un valor típico. El resultado se calcula con las mismas fórmulas del ejemplo.</p>
+            </div>
+
+            <noscript>
+              <p class="note">Activa JavaScript para usar la calculadora. El ejemplo resuelto de al lado sigue disponible.</p>
+            </noscript>
+
+            <div class="calc-controls">
+              <label for="wavelength-range">Longitud de onda <output id="wavelength-output" for="wavelength-range">632.8 nm</output></label>
+              <input type="range" id="wavelength-range" min="380" max="1600" step="0.1" value="632.8">
+              <div class="calc-number">
+                <label for="wavelength-input">Valor exacto (nm)</label>
+                <input type="number" id="wavelength-input" min="380" max="1600" step="0.1" value="632.8" inputmode="decimal">
+              </div>
+              <div class="preset-row" role="group" aria-label="Longitudes de onda de ejemplo">
+                <button type="button" class="chip" data-wavelength="405">405 · Blu-ray</button>
+                <button type="button" class="chip" data-wavelength="532">532 · Verde</button>
+                <button type="button" class="chip" data-wavelength="632.8">632.8 · He-Ne</button>
+                <button type="button" class="chip" data-wavelength="650">650 · DVD</button>
+                <button type="button" class="chip" data-wavelength="780">780 · CD</button>
+                <button type="button" class="chip" data-wavelength="850">850 · Fibra</button>
+                <button type="button" class="chip" data-wavelength="1310">1310 · Fibra</button>
+                <button type="button" class="chip" data-wavelength="1550">1550 · Fibra</button>
+              </div>
+            </div>
+
+            <div class="calc-result" aria-live="polite">
+              <div class="swatch" id="wavelength-swatch" data-region="visible"></div>
+              <p class="calc-region" id="wavelength-region">Rojo visible</p>
+              <dl class="result-list">
+                <div><dt>Frecuencia</dt><dd id="freq-value">473.8 THz</dd></div>
+                <div><dt>Energía</dt><dd id="energy-j">3.139 × 10<sup>-19</sup> J</dd></div>
+                <div><dt>Energía</dt><dd id="energy-ev">1.959 eV</dd></div>
+              </dl>
+              <details class="calc-details">
+                <summary>Ver la sustitución</summary>
+                <p id="calc-substitution">
+                  λ = 632.8 × 10<sup>-9</sup> m; f = c/λ; E = hf = hc/λ.
+                </p>
+              </details>
+              <p class="note">Calculado para el vacío. El color es aproximado; fuera del visible se indica el rango.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="aplicaciones" aria-labelledby="aplicaciones-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker">06 · El fotón sale al mundo</p>
+          <h2 id="aplicaciones-title">Aplicaciones: cada una aprovecha una propiedad distinta</h2>
+          <p class="section-lead">
+            La pregunta útil no es solo “¿dónde se usa un láser?”, sino “¿qué propiedad del láser hace
+            posible ese uso?”. En las tarjetas, elige la propiedad principal y lee la explicación.
+          </p>
+        </header>
+
+        <div class="detector-bar">
+          <div>
+            <p class="eyebrow">Detector de propiedades</p>
+            <h3>¿Qué propiedad es la principal?</h3>
+          </div>
+          <div class="detector-actions">
+            <p class="detector-score" id="detector-score" aria-live="polite">Aciertos: 0 / 6</p>
+            <button type="button" class="btn btn--ghost" id="detector-reset">Reiniciar detector</button>
+          </div>
+        </div>
+
+        <noscript>
+          <p class="callout callout--info">Activa JavaScript para responder el detector; las tarjetas y sus notas siguen disponibles.</p>
+        </noscript>
+
+        <div class="app-grid">
+          <article class="app-card" data-app="fibra">
+            <div class="app-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="24" cy="24" r="16" opacity=".35"/>
+                <circle cx="24" cy="24" r="5"/>
+                <path d="M8 24h6M34 24h6M24 8v6M24 34v6"/>
+                <path d="M14 34c4-8 12-12 20-12" opacity=".65"/>
+              </svg>
+            </div>
+            <h3>Fibra óptica</h3>
+            <p class="app-where">Internet, centros de datos y telefonía.</p>
+            <p class="app-question">¿Qué propiedad es la principal?</p>
+            <div class="app-options" role="group" aria-label="Propiedad principal de la fibra óptica">
+              <button type="button" class="chip" data-property="mono">Monocromaticidad</button>
+              <button type="button" class="chip" data-property="coherencia">Coherencia</button>
+              <button type="button" class="chip" data-property="direccion">Direccionalidad</button>
+            </div>
+            <p class="app-feedback" aria-live="polite"></p>
+            <p class="app-note">La luz se guía por reflexión total interna; la coherencia también ayuda en sistemas coherentes.</p>
+          </article>
+
+          <article class="app-card" data-app="almacenamiento">
+            <div class="app-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="24" cy="24" r="17"/>
+                <circle cx="24" cy="24" r="5"/>
+                <path d="M24 7a17 17 0 0 1 12 5" opacity=".65"/>
+                <path d="M31 21l4 3-4 3" opacity=".8"/>
+              </svg>
+            </div>
+            <h3>Almacenamiento óptico</h3>
+            <p class="app-where">CD, DVD y Blu-ray.</p>
+            <p class="app-question">¿Qué propiedad es la principal?</p>
+            <div class="app-options" role="group" aria-label="Propiedad principal del almacenamiento óptico">
+              <button type="button" class="chip" data-property="mono">Monocromaticidad</button>
+              <button type="button" class="chip" data-property="coherencia">Coherencia</button>
+              <button type="button" class="chip" data-property="direccion">Direccionalidad</button>
+            </div>
+            <p class="app-feedback" aria-live="polite"></p>
+            <p class="app-note">CD 780 nm · DVD 650 nm · Blu-ray 405 nm. Una λ más corta permite un punto más pequeño.</p>
+          </article>
+
+          <article class="app-card" data-app="impresora">
+            <div class="app-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="9" y="18" width="30" height="16" rx="3"/>
+                <path d="M16 18v-7h16v7M16 34v6h16v-6"/>
+                <path d="M24 21v10" opacity=".6"/>
+                <path d="M12 27h5M31 27h5" opacity=".6"/>
+              </svg>
+            </div>
+            <h3>Impresora láser</h3>
+            <p class="app-where">Oficina e impresión de documentos.</p>
+            <p class="app-question">¿Qué propiedad es la principal?</p>
+            <div class="app-options" role="group" aria-label="Propiedad principal de la impresora láser">
+              <button type="button" class="chip" data-property="mono">Monocromaticidad</button>
+              <button type="button" class="chip" data-property="coherencia">Coherencia</button>
+              <button type="button" class="chip" data-property="direccion">Direccionalidad</button>
+            </div>
+            <p class="app-feedback" aria-live="polite"></p>
+            <p class="app-note">El láser expone un tambor fotoconductor; el tóner se adhiere y se funde con calor.</p>
+          </article>
+
+          <article class="app-card" data-app="lector">
+            <div class="app-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M9 14v-5h6M39 14v-5h-6M9 34v5h6M39 34v5h-6"/>
+                <path d="M16 17v14M20 17v14M25 17v14M30 17v14M34 17v14" opacity=".75"/>
+                <path d="M8 24h32" stroke="#e63946" stroke-width="2.5"/>
+              </svg>
+            </div>
+            <h3>Lector de códigos</h3>
+            <p class="app-where">Supermercado y almacén.</p>
+            <p class="app-question">¿Qué propiedad es la principal?</p>
+            <div class="app-options" role="group" aria-label="Propiedad principal del lector de códigos">
+              <button type="button" class="chip" data-property="mono">Monocromaticidad</button>
+              <button type="button" class="chip" data-property="coherencia">Coherencia</button>
+              <button type="button" class="chip" data-property="direccion">Direccionalidad</button>
+            </div>
+            <p class="app-feedback" aria-live="polite"></p>
+            <p class="app-note">Un haz barre el código y un sensor mide la luz reflejada. Muchos lectores modernos ya usan cámaras.</p>
+          </article>
+
+          <article class="app-card" data-app="lidar">
+            <div class="app-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="8" y="27" width="22" height="10" rx="4"/>
+                <circle cx="14" cy="38" r="3"/><circle cx="25" cy="38" r="3"/>
+                <path d="M31 22c5-2 8-6 8-11M31 22c6 1 10 5 11 10M31 22c3-5 3-9 3-13" opacity=".7"/>
+                <circle cx="31" cy="22" r="2" fill="#e63946" stroke="none"/>
+              </svg>
+            </div>
+            <h3>LiDAR</h3>
+            <p class="app-where">Autos, drones, mapas y NASA GEDI.</p>
+            <p class="app-question">¿Qué propiedad es la principal?</p>
+            <div class="app-options" role="group" aria-label="Propiedad principal del LiDAR">
+              <button type="button" class="chip" data-property="mono">Monocromaticidad</button>
+              <button type="button" class="chip" data-property="coherencia">Coherencia</button>
+              <button type="button" class="chip" data-property="direccion">Direccionalidad</button>
+            </div>
+            <p class="app-feedback" aria-live="polite"></p>
+            <p class="app-note">Mide el tiempo de vuelo de pulsos de luz: emite, espera el eco y calcula la distancia.</p>
+          </article>
+
+          <article class="app-card" data-app="sensores">
+            <div class="app-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M8 24h10l4-7 4 14 4-7h10"/>
+                <path d="M8 34h32M8 14h32" opacity=".25"/>
+                <circle cx="24" cy="24" r="17" opacity=".35"/>
+              </svg>
+            </div>
+            <h3>Sensores e interferometría</h3>
+            <p class="app-where">Metrología, holografía y sensores de fibra.</p>
+            <p class="app-question">¿Qué propiedad es la principal?</p>
+            <div class="app-options" role="group" aria-label="Propiedad principal de los sensores e interferometría">
+              <button type="button" class="chip" data-property="mono">Monocromaticidad</button>
+              <button type="button" class="chip" data-property="coherencia">Coherencia</button>
+              <button type="button" class="chip" data-property="direccion">Direccionalidad</button>
+            </div>
+            <p class="app-feedback" aria-live="polite"></p>
+            <p class="app-note">La interferencia entre haces permite medir distancias y deformaciones muy pequeñas.</p>
+          </article>
+        </div>
+
+        <div class="callout callout--info">
+          <p class="callout-title">Y también: industria y medicina</p>
+          <p>
+            En corte, soldadura, marcado, cirugía y tratamientos médicos, la <strong>direccionalidad</strong>
+            concentra energía en un punto. La potencia y la longitud de onda se eligen según el material o el
+            tejido; no es lo mismo cortar acero que operar una retina.
+          </p>
+        </div>
+
+        <div class="callout callout--myth">
+          <p class="callout-title">No todo es láser</p>
+          <p>
+            Algunos lectores de códigos, impresoras y sensores usan LED o cámaras. El láser no es la única
+            tecnología: es la que mejor controla la dirección, el color y la coherencia de la luz.
+          </p>
+        </div>
+
+        <p class="sources">
+          Fuentes: Fiber Optic Association (FOA, s. f.); Computer History Museum (CHM, s. f.); Xerox (s. f.);
+          Honeywell (2020); National Aeronautics and Space Administration (NASA, s. f.); National Oceanic and
+          Atmospheric Administration (NOAA, s. f.); Paschotta (s. f.-c); U.S. Food and Drug Administration (FDA, s. f.).
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="seguridad" aria-labelledby="seguridad-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker">07 · Seguridad y cierre</p>
+          <h2 id="seguridad-title">La luz que hay que respetar</h2>
+          <p class="section-lead">
+            La luz láser puede ser peligrosa porque el ojo enfoca el haz en la retina. La gravedad depende
+            de la clase, la potencia, la longitud de onda y el uso; no solo del color del haz.
+          </p>
+        </header>
+
+        <div class="safety-grid">
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de clases de riesgo láser">
+            <table class="data-table safety-table">
+              <caption>Clases de riesgo y equivalencias aproximadas</caption>
+              <thead>
+                <tr><th>Clase IEC</th><th>FDA</th><th>Riesgo</th><th>Ejemplos</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="badge badge--success">1</span></td><td>I</td><td>Bajo en uso normal; aumenta con instrumentos ópticos.</td><td>Impresoras láser, reproductores CD/DVD</td></tr>
+                <tr><td><span class="badge badge--info">2</span></td><td>II</td><td>Visible; el parpadeo protege, pero no hay que mirar fijo.</td><td>Lectores de códigos</td></tr>
+                <tr><td><span class="badge badge--warning">3R</span></td><td>IIIa</td><td>Riesgo bajo con cuidado; aumenta con instrumentos ópticos.</td><td>Punteros láser</td></tr>
+                <tr><td><span class="badge badge--warning">3B</span></td><td>IIIb</td><td>Riesgo directo para ojos y piel; reflexiones difusas cerca del límite.</td><td>Industria e investigación</td></tr>
+                <tr><td><span class="badge badge--danger">4</span></td><td>IV</td><td>Riesgo directo y reflejado; puede iniciar fuego.</td><td>Industria, medicina, espectáculos</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="safety-copy">
+            <h3>Riesgos principales</h3>
+            <ul class="risk-list">
+              <li><strong>Ojo:</strong> la retina o la córnea pueden dañarse; el riesgo depende de la λ.</li>
+              <li><strong>Piel:</strong> quemaduras con potencias altas, sobre todo en infrarrojo.</li>
+              <li><strong>Fuego:</strong> materiales inflamables cerca del haz o de reflexiones.</li>
+              <li><strong>Eléctrico:</strong> fuentes de alimentación de los equipos láser.</li>
+              <li><strong>Humos:</strong> vapores y partículas si se corta o marca material.</li>
+              <li><strong>Reflexiones:</strong> una superficie brillante puede desviar el haz hacia los ojos.</li>
+            </ul>
+
+            <h3>Precauciones básicas</h3>
+            <ul class="checklist">
+              <li>Nunca apuntes el haz a los ojos ni lo mires directo o reflejado.</li>
+              <li>No uses binoculares, lupas ni instrumentos ópticos para mirar el haz.</li>
+              <li>Usa gafas adecuadas a la longitud de onda; las gafas de sol no sirven.</li>
+              <li>Mantén el haz por debajo del nivel de los ojos y fuera de pasillos.</li>
+              <li>Usa enclavamientos, cortinas y señalización; solo personal capacitado.</li>
+              <li>No abras lectores de CD/DVD ni impresoras: el producto puede ser Clase 1, pero el interior no.</li>
+              <li>No uses punteros con niños o mascotas; no apuntes a aviones.</li>
+              <li>Reporta cualquier incidente o exposición accidental.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout callout--warning">
+          <p class="callout-title">Un puntero láser no es un juguete</p>
+          <p>
+            Un puntero de baja potencia puede parecer inofensivo, pero un impacto directo en el ojo o una
+            reflexión pueden causar lesiones. La clase del producto no elimina la necesidad de usarlo con
+            cuidado.
+          </p>
+        </div>
+
+        <div class="callout callout--info">
+          <p class="callout-title">Para cerrar</p>
+          <p>
+            Un láser no es una lámpara más brillante: es luz organizada por emisión estimulada, inversión de
+            población y una cavidad. Esa organización es la que permite transportar datos, leer un disco,
+            imprimir, medir distancias o cortar con precisión. La física está detrás de la infraestructura
+            que usamos todos los días.
+          </p>
+        </div>
+
+        <p class="sources">Fuentes: Occupational Safety and Health Administration (OSHA, s. f.-a); OSHA (s. f.-b); FDA (2024).</p>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="quiz" aria-labelledby="quiz-title">
+      <div class="container container--narrow">
+        <header class="section-head">
+          <p class="section-kicker">Comprueba lo que aprendiste</p>
+          <h2 id="quiz-title">Quiz de 5 preguntas</h2>
+          <p class="section-lead">
+            No cuenta para calificación. Responde, comprueba y lee la explicación; si fallas, vuelve a la
+            estación correspondiente.
+          </p>
+        </header>
+        <div id="quiz-root"></div>
+        <noscript>
+          <p class="callout callout--info">Activa JavaScript para usar el quiz interactivo. El resto del contenido sigue disponible.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="section" id="aporte" aria-labelledby="aporte-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker">Cierre · Aporte del equipo</p>
+          <h2 id="aporte-title">Convertimos el tema en un laboratorio que se puede razonar</h2>
+          <p class="section-lead">
+            No quisimos hacer solo una página bonita. Quisimos que el lector tuviera que tomar decisiones
+            y ver las consecuencias físicas de cada una.
+          </p>
+        </header>
+
+        <div class="aporte-grid">
+          <div class="aporte-copy">
+            <p>
+              La página no dice “la inversión de población es importante” y sigue. Obliga a subir el bombeo,
+              alinear la cavidad y disparar un fotón. Si algo falta, el laboratorio explica qué falta y por qué.
+            </p>
+            <p>
+              Ese es el aporte: un modelo interactivo que hace visible la cadena causal. Lo acompañamos de una
+              calculadora de fotones, un detector de propiedades y un quiz con retroalimentación para que el
+              aprendizaje no se quede en leer.
+            </p>
+            <p>
+              Además, el modo exposición permite que el equipo demuestre la página en 5-7 minutos, que es
+              exactamente lo que pide la actividad.
+            </p>
+            <div class="callout callout--key">
+              <p class="callout-title">En una frase</p>
+              <p>
+                <strong>Nuestro aporte es un laboratorio virtual guiado que convierte la emisión láser en
+                una cadena de decisiones y consecuencias, y un recorrido que permite demostrarlo en vivo.</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="aporte-cards">
+            <article class="aporte-card">
+              <span class="aporte-icon" aria-hidden="true">01</span>
+              <h3>Laboratorio causal</h3>
+              <p>Tres misiones: inversión, cavidad y emisión. No es una animación decorativa: hay que razonar qué condición falta.</p>
+            </article>
+            <article class="aporte-card">
+              <span class="aporte-icon" aria-hidden="true">02</span>
+              <h3>Ruta y modo exposición</h3>
+              <p>Nueve paradas con notas cortas, navegación con flechas y pantalla completa para la clase.</p>
+            </article>
+            <article class="aporte-card">
+              <span class="aporte-icon" aria-hidden="true">03</span>
+              <h3>Calculadora de fotones</h3>
+              <p>De la longitud de onda a la frecuencia y a la energía en J y eV, con la sustitución a la vista.</p>
+            </article>
+            <article class="aporte-card">
+              <span class="aporte-icon" aria-hidden="true">04</span>
+              <h3>Refuerzo activo</h3>
+              <p>Detector de propiedades y quiz con explicaciones para conectar la física con las aplicaciones.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="callout callout--info">
+          <p class="callout-title">Qué no es esta página</p>
+          <p>
+            No es una simulación numérica de un láser real ni una práctica de laboratorio. Es un modelo
+            conceptual para entender qué condiciones hacen falta y cómo se relacionan. Los datos y cálculos
+            se apoyan en las fuentes citadas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="equipo" aria-labelledby="equipo-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker">Créditos</p>
+          <h2 id="equipo-title">El equipo</h2>
+          <p class="section-lead">
+            Cuatro roles, una misma página. Cada integrante se encargó de una parte del recorrido y de
+            revisar el trabajo del equipo.
+          </p>
+        </header>
+
+        <!-- EDITAR AQUÍ: reemplaza los cuatro placeholders [Integrante N] por los nombres del equipo. -->
+        <div class="team-grid">
+          <article class="team-card">
+            <span class="team-avatar" aria-hidden="true">1</span>
+            <h3>[Integrante 1]</h3>
+            <p class="team-role">Coordinación y narrativa</p>
+            <p class="team-area">Integró la ruta, revisó el contenido y armó el guion de exposición.</p>
+          </article>
+          <article class="team-card">
+            <span class="team-avatar" aria-hidden="true">2</span>
+            <h3>[Integrante 2]</h3>
+            <p class="team-role">Fundamentos y He-Ne</p>
+            <p class="team-area">Revisó los procesos físicos, el caso He-Ne y el cálculo de energía.</p>
+          </article>
+          <article class="team-card">
+            <span class="team-avatar" aria-hidden="true">3</span>
+            <h3>[Integrante 3]</h3>
+            <p class="team-role">Desarrollo e interacción</p>
+            <p class="team-area">Construyó el laboratorio, la calculadora, el detector y el quiz.</p>
+          </article>
+          <article class="team-card">
+            <span class="team-avatar" aria-hidden="true">4</span>
+            <h3>[Integrante 4]</h3>
+            <p class="team-role">Aplicaciones, seguridad y fuentes</p>
+            <p class="team-area">Verificó las fuentes y armó las secciones de aplicaciones y seguridad.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="referencias" aria-labelledby="referencias-title">
+      <div class="container container--narrow">
+        <header class="section-head">
+          <p class="section-kicker">Investigación documental</p>
+          <h2 id="referencias-title">Referencias</h2>
+          <p class="section-lead">
+            Fuentes institucionales y técnicas, en formato APA 7. Se consultaron en noviembre de 2026.
+            No se utilizó Wikipedia ni libros.
+          </p>
+        </header>
+
+        <ol class="references">
+          <li>Computer History Museum. (s. f.). <cite>2000: Prototype blue laser disc stores HD video</cite>. <a href="https://www.computerhistory.org/storageengine/prototype-blue-laser-disc-stores-hd-video" target="_blank" rel="noopener noreferrer">https://www.computerhistory.org/storageengine/prototype-blue-laser-disc-stores-hd-video</a></li>
+          <li>Fiber Optic Association. (s. f.). <cite>Optical fiber</cite>. <a href="https://www.thefoa.org/tech/ref/basic/fiber.html" target="_blank" rel="noopener noreferrer">https://www.thefoa.org/tech/ref/basic/fiber.html</a></li>
+          <li>Food and Drug Administration. (2024, 13 de noviembre). <cite>Laser products and instruments</cite>. <a href="https://www.fda.gov/radiation-emitting-products/home-business-and-entertainment-products/laser-products-and-instruments" target="_blank" rel="noopener noreferrer">https://www.fda.gov/radiation-emitting-products/home-business-and-entertainment-products/laser-products-and-instruments</a></li>
+          <li>Food and Drug Administration. (s. f.). <cite>Medical lasers</cite>. <a href="https://www.fda.gov/radiation-emitting-products/surgical-and-therapeutic-products/medical-lasers" target="_blank" rel="noopener noreferrer">https://www.fda.gov/radiation-emitting-products/surgical-and-therapeutic-products/medical-lasers</a></li>
+          <li>Honeywell. (2020, 18 de junio). <cite>Barcode scanning for logistics during social distancing</cite>. <a href="https://automation.honeywell.com/us/en/news/featured-stories/productivity-solutions/barcode-scanning-for-logistics-when-social-distancing-matters" target="_blank" rel="noopener noreferrer">https://automation.honeywell.com/us/en/news/featured-stories/productivity-solutions/barcode-scanning-for-logistics-when-social-distancing-matters</a></li>
+          <li>Nave, R. (s. f.-a). <cite>Gas lasers</cite>. HyperPhysics. <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/optmod/lasgas.html" target="_blank" rel="noopener noreferrer">http://hyperphysics.phy-astr.gsu.edu/hbase/optmod/lasgas.html</a></li>
+          <li>Nave, R. (s. f.-b). <cite>Quantum properties of light</cite>. HyperPhysics. <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/optmod/qualig.html" target="_blank" rel="noopener noreferrer">http://hyperphysics.phy-astr.gsu.edu/hbase/optmod/qualig.html</a></li>
+          <li>National Aeronautics and Space Administration. (s. f.). <cite>Global Ecosystem Dynamics Investigation Lidar</cite>. NASA Earthdata. <a href="https://www.earthdata.nasa.gov/data/instruments/gedi-lidar" target="_blank" rel="noopener noreferrer">https://www.earthdata.nasa.gov/data/instruments/gedi-lidar</a></li>
+          <li>National Oceanic and Atmospheric Administration. (s. f.). <cite>What is lidar?</cite> <a href="https://oceanservice.noaa.gov/facts/lidar.html" target="_blank" rel="noopener noreferrer">https://oceanservice.noaa.gov/facts/lidar.html</a></li>
+          <li>Occupational Safety and Health Administration. (s. f.-a). <cite>Laser hazards</cite>. <a href="https://www.osha.gov/laser-hazards/hazards" target="_blank" rel="noopener noreferrer">https://www.osha.gov/laser-hazards/hazards</a></li>
+          <li>Occupational Safety and Health Administration. (s. f.-b). <cite>OSHA technical manual: Section III, Chapter 6—Laser hazards</cite>. <a href="https://www.osha.gov/otm/section-3-health-hazards/chapter-6" target="_blank" rel="noopener noreferrer">https://www.osha.gov/otm/section-3-health-hazards/chapter-6</a></li>
+          <li>Paschotta, R. (s. f.-a). <cite>Coherence</cite>. RP Photonics Encyclopedia. <a href="https://www.rp-photonics.com/coherence.html" target="_blank" rel="noopener noreferrer">https://www.rp-photonics.com/coherence.html</a></li>
+          <li>Paschotta, R. (s. f.-b). <cite>Helium–neon lasers</cite>. RP Photonics Encyclopedia. <a href="https://www.rp-photonics.com/helium_neon_lasers.html" target="_blank" rel="noopener noreferrer">https://www.rp-photonics.com/helium_neon_lasers.html</a></li>
+          <li>Paschotta, R. (s. f.-c). <cite>Laser applications</cite>. RP Photonics Encyclopedia. <a href="https://www.rp-photonics.com/laser_applications.html" target="_blank" rel="noopener noreferrer">https://www.rp-photonics.com/laser_applications.html</a></li>
+          <li>Paschotta, R. (s. f.-d). <cite>Laser light</cite>. RP Photonics Encyclopedia. <a href="https://www.rp-photonics.com/laser_light.html" target="_blank" rel="noopener noreferrer">https://www.rp-photonics.com/laser_light.html</a></li>
+          <li>Paschotta, R. (s. f.-e). <cite>Monochromatic light</cite>. RP Photonics Encyclopedia. <a href="https://www.rp-photonics.com/monochromatic_light.html" target="_blank" rel="noopener noreferrer">https://www.rp-photonics.com/monochromatic_light.html</a></li>
+          <li>Paschotta, R. (s. f.-f). <cite>Population inversion</cite>. RP Photonics Encyclopedia. <a href="https://www.rp-photonics.com/population_inversion.html" target="_blank" rel="noopener noreferrer">https://www.rp-photonics.com/population_inversion.html</a></li>
+          <li>Paschotta, R. (s. f.-g). <cite>Stimulated emission</cite>. RP Photonics Encyclopedia. <a href="https://www.rp-photonics.com/stimulated_emission.html" target="_blank" rel="noopener noreferrer">https://www.rp-photonics.com/stimulated_emission.html</a></li>
+          <li>SPIE. (s. f.). <cite>Helium-neon lasers</cite>. Optipedia. <a href="https://spie.org/publications/spie-publication-resources/optipedia-free-optics-information/fg12_p82_helium-neon_lasers" target="_blank" rel="noopener noreferrer">https://spie.org/publications/spie-publication-resources/optipedia-free-optics-information/fg12_p82_helium-neon_lasers</a></li>
+          <li>Thorlabs. (s. f.). <cite>Helium-neon laser tutorial</cite>. <a href="https://www.thorlabs.com/helium-neon-laser-tutorial" target="_blank" rel="noopener noreferrer">https://www.thorlabs.com/helium-neon-laser-tutorial</a></li>
+          <li>Xerox. (s. f.). <cite>Laser printing guide and history</cite>. <a href="https://www.xerox.com/en-us/office/insights/laser-printers" target="_blank" rel="noopener noreferrer">https://www.xerox.com/en-us/office/insights/laser-printers</a></li>
+        </ol>
+
+        <p class="ref-note">
+          Las citas en el texto siguen el formato autor-fecha de APA 7. Los enlaces se verificaron durante
+          la elaboración de la página; si alguna dirección cambia, se puede localizar el título en el sitio
+          institucional correspondiente.
+        </p>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <footer class="site-footer" id="pie">
+    <div class="footer-grid container">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">λ</span>
+        <div>
+          <p class="footer-title">La ruta del fotón</p>
+          <p class="footer-subtitle">Estudio y aplicación de la emisión láser</p>
+          <p class="footer-meta">Trabajo escolar · Física · Unidad 3 · 2026</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Enlaces del pie de página">
+        <a href="#inicio">Inicio</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#aporte">Aporte del equipo</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#referencias">Referencias</a>
+      </nav>
+      <p class="footer-note">
+        Hecho con HTML, CSS y JavaScript puro. Sin frameworks, sin CDN y sin conexión obligatoria.
+        Los modelos interactivos son didácticos, no simulaciones experimentales.
+      </p>
+    </div>
+  </footer>
+
+  <aside class="presenter" id="presenter" aria-label="Modo exposición" hidden>
+    <div class="presenter-inner">
+      <div class="presenter-head">
+        <div>
+          <p class="eyebrow">Modo exposición</p>
+          <p class="presenter-progress" id="presenter-progress">Parada 1 de 9</p>
+        </div>
+        <button type="button" class="icon-btn" id="presenter-close" aria-label="Cerrar modo exposición">×</button>
+      </div>
+      <h2 id="presenter-title">Portada</h2>
+      <p class="presenter-note" id="presenter-note">Empieza con la pregunta que abre la página: ¿qué tienen en común un escáner, la fibra y un LiDAR?</p>
+      <div class="presenter-actions">
+        <button type="button" class="btn btn--ghost" id="presenter-prev">← Anterior</button>
+        <a class="btn btn--secondary" id="presenter-go" href="#inicio">Ir a la sección</a>
+        <button type="button" class="btn btn--primary" id="presenter-next">Siguiente →</button>
+      </div>
+      <div class="presenter-foot">
+        <button type="button" class="link-btn" id="presenter-fullscreen">Pantalla completa</button>
+        <span class="presenter-hint">Flechas para navegar · Esc para cerrar</span>
+      </div>
+    </div>
+  </aside>
+
+  <a class="to-top" id="to-top" href="#inicio" aria-label="Volver arriba">↑</a>
+
+  <script defer src="./js/main.js"></script>
+  <script defer src="./js/laser-lab.js"></script>
+  <script defer src="./js/photon-calculator.js"></script>
+  <script defer src="./js/detector.js"></script>
+  <script defer src="./js/quiz.js"></script>
+</body>
+</html>

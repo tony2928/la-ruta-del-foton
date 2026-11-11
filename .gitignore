@@ -1,0 +1,12 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Herramientas de prueba
+.playwright-cli/
+node_modules/
+*.log
+
+# Paquetes de entrega
+*.zip
