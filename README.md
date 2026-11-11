@@ -57,15 +57,15 @@ Y visita `http://127.0.0.1:4173/`.
 
 ## Editar los nombres del equipo
 
-Los cuatro nombres están **solo** en la sección `#equipo` de `index.html`, dentro del bloque marcado con:
+Los nombres están **solo** en la sección `#equipo` de `index.html`, dentro del bloque marcado con:
 
 ```html
 <!-- EDITAR AQUÍ: reemplaza los cuatro placeholders [Integrante N] por los nombres del equipo. -->
 ```
 
-Reemplaza `[Integrante 1]`, `[Integrante 2]`, `[Integrante 3]` y `[Integrante 4]`. Los roles y las descripciones son una propuesta de reparto; ajústalos si el equipo se organizó de otra forma.
+Reemplaza `[Integrante 1]`, `[Integrante 2]`, `[Integrante 3]` y `[Integrante 4]`. Si el equipo tiene otra cantidad de integrantes, ajusta también la cantidad de elementos de la lista.
 
-El resto de la página y el guion usan los roles (“quien coordina”, “quien presenta los fundamentos”…) para no repetir placeholders.
+El guion de exposición conserva los roles de participación para organizar la presentación; no aparecen en la sección de integrantes.
 
 ## Cómo exponer
 

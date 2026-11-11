@@ -2122,52 +2122,22 @@ input[type="range"] {
   letter-spacing: 0.08em;
 }
 
-.team-grid {
+.team-names {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.team-card {
-  padding: 1.1rem;
+.team-names li {
+  padding: 1rem 1.15rem;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.team-avatar {
-  display: grid;
-  place-items: center;
-  width: 2.35rem;
-  height: 2.35rem;
-  margin-bottom: 0.7rem;
-  background: var(--navy);
-  border-radius: 50%;
-  color: var(--white);
-  font-family: var(--font-mono);
-  font-weight: 800;
-}
-
-.team-card h3 {
-  margin: 0 0 0.2rem;
-  font-size: 1rem;
-}
-
-.team-role {
-  margin: 0 0 0.5rem;
-  color: var(--laser-deep);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.055em;
-  text-transform: uppercase;
-}
-
-.team-area {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.8rem;
-  line-height: 1.5;
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-weight: 700;
 }
 
 /* ---------- Referencias ---------- */
@@ -2595,10 +2565,6 @@ input[type="range"] {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .lab-grid {
     grid-template-columns: 1fr;
   }
@@ -2655,7 +2621,7 @@ input[type="range"] {
   .ingredient-grid,
   .property-grid,
   .app-grid,
-  .team-grid {
+  .team-names {
     grid-template-columns: 1fr;
   }
 
@@ -2879,14 +2845,13 @@ input[type="range"] {
   .ingredient-grid,
   .property-grid,
   .app-grid,
-  .team-grid {
+  .team-names {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .ingredient-card,
   .property-card,
   .app-card,
-  .team-card,
   .figure,
   .lab,
   .worked-example,
