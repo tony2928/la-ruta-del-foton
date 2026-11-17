@@ -1983,16 +1983,23 @@ input[type="range"] {
   border-color: #fca5a5;
 }
 
-.quiz-question legend {
+.quiz-question-title {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
-  padding: 0 0.2rem;
+  margin: 0 0 0.8rem;
+  padding: 0;
   font-size: 0.98rem;
   font-weight: 750;
+  line-height: 1.45;
+}
+
+.quiz-question-title > span:last-child {
+  min-width: 0;
 }
 
 .quiz-num {
+  flex: 0 0 auto;
   color: var(--laser-deep);
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -2002,7 +2009,7 @@ input[type="range"] {
 .quiz-options {
   display: grid;
   gap: 0.42rem;
-  margin-top: 0.8rem;
+  margin-top: 0;
 }
 
 .quiz-options label {

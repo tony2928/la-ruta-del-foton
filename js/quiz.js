@@ -174,8 +174,11 @@
           <p class="quiz-progress-text">Pregunta ${position + 1} de ${queue.length}</p>
           <div class="quiz-progress-bar" aria-hidden="true"><span class="quiz-progress-fill" style="width:${progress}%"></span></div>
         </div>
-        <fieldset class="quiz-question ${checkedHere ? (isCorrect ? "is-correct" : "is-wrong") : ""}" data-question="${current}">
-          <legend><span class="quiz-num">${String(current + 1).padStart(2, "0")}</span> ${question.text}</legend>
+        <section class="quiz-question ${checkedHere ? (isCorrect ? "is-correct" : "is-wrong") : ""}" role="group" aria-labelledby="quiz-question-title-${current}" data-question="${current}">
+          <h3 class="quiz-question-title" id="quiz-question-title-${current}">
+            <span class="quiz-num">${String(current + 1).padStart(2, "0")}</span>
+            <span>${question.text}</span>
+          </h3>
           <div class="quiz-options" role="radiogroup" aria-label="Opciones de respuesta" aria-describedby="quiz-feedback-${current}">
             ${optionsHtml}
           </div>
@@ -186,7 +189,7 @@
             <button type="button" class="btn btn--primary" id="quiz-next" ${checkedHere ? "" : "hidden"}>${position === queue.length - 1 ? "Ver resultados" : "Siguiente →"}</button>
           </div>
           <p class="quiz-feedback ${checkedHere ? "is-visible" : ""}" id="quiz-feedback-${current}">${feedbackHtml}</p>
-        </fieldset>
+        </section>
       </div>`;
 
     const optionsGroup = root.querySelector(".quiz-options");
