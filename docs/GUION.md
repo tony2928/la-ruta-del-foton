@@ -64,13 +64,13 @@ Cambia entre las tres pestañas. En emisión estimulada, señala los dos fotones
 “Un láser necesita un medio activo, una fuente de bombeo, una inversión de población y una cavidad óptica. La inversión significa que hay más átomos en el nivel superior que en el inferior. La cavidad son dos espejos: uno refleja casi todo y el otro es parcialmente reflectante. La ganancia debe superar las pérdidas: eso es el umbral.”
 
 **Haz:**  
-Aumenta el bombeo a 70%, alinea la cavidad y dispara un fotón. Muestra el cambio de estados y el haz.
+Sube el bombeo a 70%, deja el vaciado del nivel inferior al 100%, alinea la cavidad y dispara un fotón. Muestra el cambio de estados, la ganancia frente a las pérdidas y el haz.
 
 **Pregunta al público:**  
 “¿Qué pasa si dejo el bombeo bajo? ¿Y si desalineo el espejo?”
 
 **Respuesta breve:**  
-“Sin inversión, gana la emisión espontánea; sin cavidad, los fotones escapan y no hay amplificación. Para que aparezca el haz se necesitan ambas condiciones y un fotón que inicie el proceso.”
+“Sin inversión, la absorción gana a la emisión estimulada; sin cavidad, los fotones escapan y no hay amplificación. Para que aparezca el haz se necesitan ambas condiciones y un fotón que inicie el proceso.”
 
 **Transición:**  
 “Ya tenemos luz amplificada. ¿Qué la hace distinta de otras fuentes?”
@@ -158,13 +158,13 @@ Muestra el laboratorio o el panel de aporte. Termina con la frase:
    Se pierde la retroalimentación de la cavidad; los fotones escapan y no hay amplificación sostenida.
 
 8. **¿El laboratorio reproduce un láser real?**  
-   No. Es una representación simplificada para comprender el proceso; no reproduce potencias, pérdidas ni tiempos de un láser real.
+   No. Es una representación simplificada para comprender el proceso; incluye bombeo, vaciado del nivel inferior y un umbral de ganancia conceptual, pero no reproduce potencias, pérdidas ni tiempos de un láser real.
 
 9. **¿De dónde sacaron las fuentes?**  
    De organismos institucionales y técnicos: FDA, OSHA, NASA, NOAA, HyperPhysics, RP Photonics, SPIE, Thorlabs, FOA y Xerox. Están en APA 7 al final de la página y en `docs/FUENTES.md`.
 
 10. **¿Cuál es el aporte del equipo?**  
-    El laboratorio interactivo, la calculadora y las actividades de repaso, que permiten comprobar los conceptos y presentar la página en clase.
+    El laboratorio interactivo, la calculadora, los mini-experimentos de propiedades y las actividades de repaso, que permiten comprobar los conceptos y presentar la página en clase.
 
 ## Plan B
 

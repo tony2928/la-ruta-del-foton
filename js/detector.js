@@ -8,6 +8,8 @@
   if (!cards.length) return;
 
   const score = document.getElementById("detector-score");
+  const check = document.getElementById("detector-check");
+  const retry = document.getElementById("detector-retry");
   const reset = document.getElementById("detector-reset");
 
   const labels = {
@@ -49,65 +51,141 @@
     }
   };
 
+  const selectedChip = (card) => card.querySelector("[data-property][aria-pressed='true']");
+  const isChecked = (card) => card.classList.contains("is-correct") || card.classList.contains("is-wrong");
+
   function updateScore() {
     if (!score) return;
+
     const correct = cards.filter((card) => card.classList.contains("is-correct")).length;
-    score.textContent = `Aciertos: ${correct} / ${cards.length}`;
-  }
+    const checked = cards.filter(isChecked).length;
 
-  function answerCard(card, button) {
-    if (card.dataset.answered === "true") return;
-
-    const app = card.dataset.app;
-    const info = data[app];
-    if (!info) return;
-
-    const selected = button.dataset.property;
-    const isCorrect = selected === info.answer;
-    const feedback = card.querySelector(".app-feedback");
-    const buttons = Array.from(card.querySelectorAll("[data-property]"));
-
-    card.dataset.answered = "true";
-    card.classList.add(isCorrect ? "is-correct" : "is-wrong");
-
-    buttons.forEach((item) => {
-      item.disabled = true;
-      item.setAttribute("aria-pressed", String(item === button));
-      item.classList.remove("is-selected", "is-correct", "is-wrong");
-      if (item.dataset.property === info.answer) item.classList.add("is-correct");
-    });
-
-    button.classList.add("is-selected");
-    if (!isCorrect) button.classList.add("is-wrong");
-
-    if (feedback) {
-      feedback.innerHTML = isCorrect
-        ? `<strong>Correcto.</strong> ${info.explain}`
-        : `<strong>Casi.</strong> La propiedad principal aquí es <strong>${labels[info.answer]}</strong>. ${info.explain}`;
+    if (checked === 0) {
+      score.textContent = "Sin comprobar";
+    } else if (checked < cards.length) {
+      score.textContent = `Aciertos: ${correct} / ${cards.length} · faltan ${cards.length - checked} por comprobar`;
+    } else {
+      score.textContent = `Aciertos: ${correct} / ${cards.length}`;
     }
 
+    const wrong = cards.filter((card) => card.classList.contains("is-wrong")).length;
+    if (retry) retry.hidden = wrong === 0;
+    if (check) check.disabled = checked === cards.length && correct === cards.length;
+  }
+
+  function clearCard(card) {
+    card.classList.remove("is-correct", "is-wrong", "is-selected", "is-unanswered");
+    const feedback = card.querySelector(".app-feedback");
+    if (feedback) feedback.textContent = "";
+
+    card.querySelectorAll("[data-property]").forEach((button) => {
+      button.disabled = false;
+      button.setAttribute("aria-pressed", "false");
+      button.classList.remove("is-selected", "is-correct", "is-wrong");
+    });
+
+    const cardRetry = card.querySelector(".app-retry");
+    if (cardRetry) cardRetry.hidden = true;
+  }
+
+  function selectProperty(card, button) {
+    if (isChecked(card)) return;
+
+    card.querySelectorAll("[data-property]").forEach((item) => {
+      const selected = item === button;
+      item.setAttribute("aria-pressed", String(selected));
+      item.classList.toggle("is-selected", selected);
+    });
+
+    card.classList.remove("is-unanswered");
+    card.classList.add("is-selected");
+
+    const feedback = card.querySelector(".app-feedback");
+    if (feedback) feedback.textContent = "";
+  }
+
+  function checkAll() {
+    if (!cards.every((card) => selectedChip(card))) {
+      cards.forEach((card) => {
+        card.classList.toggle("is-unanswered", !selectedChip(card));
+      });
+
+      if (score) score.textContent = `Responde las ${cards.length} tarjetas para comprobar.`;
+      const firstMissing = cards.find((card) => !selectedChip(card));
+      if (firstMissing) {
+        const target = firstMissing.querySelector("[data-property]");
+        if (target) target.focus();
+      }
+      return;
+    }
+
+    cards.forEach((card) => {
+      const info = data[card.dataset.app];
+      const selected = selectedChip(card);
+      if (!info || !selected) return;
+
+      const isCorrect = selected.dataset.property === info.answer;
+      const feedback = card.querySelector(".app-feedback");
+      const cardRetry = card.querySelector(".app-retry");
+
+      card.classList.remove("is-unanswered", "is-selected");
+      card.classList.add(isCorrect ? "is-correct" : "is-wrong");
+
+      card.querySelectorAll("[data-property]").forEach((item) => {
+        item.disabled = true;
+        item.classList.remove("is-correct", "is-wrong");
+        if (item.dataset.property === info.answer) item.classList.add("is-correct");
+      });
+
+      if (!isCorrect) selected.classList.add("is-wrong");
+
+      if (feedback) {
+        feedback.innerHTML = isCorrect
+          ? `<strong>Correcto.</strong> ${info.explain} <a href="#propiedades">Repasa las propiedades</a>.`
+          : `<strong>Casi.</strong> La propiedad que más se aprovecha aquí es <strong>${labels[info.answer]}</strong>. ${info.explain} <a href="#propiedades">Repasa las propiedades</a>.`;
+      }
+
+      if (cardRetry) cardRetry.hidden = isCorrect;
+    });
+
+    updateScore();
+  }
+
+  function retryCard(card) {
+    clearCard(card);
     updateScore();
   }
 
   cards.forEach((card) => {
     card.querySelectorAll("[data-property]").forEach((button) => {
-      button.addEventListener("click", () => answerCard(card, button));
+      button.addEventListener("click", () => selectProperty(card, button));
     });
+
+    const cardRetry = card.querySelector(".app-retry");
+    if (cardRetry) {
+      cardRetry.addEventListener("click", () => retryCard(card));
+    }
   });
+
+  if (check) {
+    check.addEventListener("click", checkAll);
+  }
+
+  if (retry) {
+    retry.addEventListener("click", () => {
+      cards.filter((card) => card.classList.contains("is-wrong")).forEach((card) => retryCard(card));
+      updateScore();
+      const firstWrong = cards.find((card) => !isChecked(card));
+      if (firstWrong) {
+        const target = firstWrong.querySelector("[data-property]");
+        if (target) target.focus();
+      }
+    });
+  }
 
   if (reset) {
     reset.addEventListener("click", () => {
-      cards.forEach((card) => {
-        delete card.dataset.answered;
-        card.classList.remove("is-correct", "is-wrong");
-        const feedback = card.querySelector(".app-feedback");
-        if (feedback) feedback.textContent = "";
-        card.querySelectorAll("[data-property]").forEach((button) => {
-          button.disabled = false;
-          button.setAttribute("aria-pressed", "false");
-          button.classList.remove("is-selected", "is-correct", "is-wrong");
-        });
-      });
+      cards.forEach((card) => clearCard(card));
       updateScore();
     });
   }

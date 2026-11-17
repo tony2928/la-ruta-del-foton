@@ -7,10 +7,11 @@ La página va de la definición de láser a las aplicaciones, con un laboratorio
 ## Qué incluye
 
 - Siete apartados de contenido: introducción, procesos luz-materia, funcionamiento, propiedades, ejemplo de helio-neón, aplicaciones y seguridad.
-- Laboratorio interactivo **“Enciende el láser”** con tres pasos: inversión de población, cavidad y emisión.
-- Calculadora de fotones: longitud de onda → frecuencia → energía en J y eV.
-- Actividad de propiedades y cuestionario con retroalimentación.
-- Modo exposición con 9 secciones y notas para el expositor.
+- Laboratorio interactivo **“Enciende el láser”** con bombeo, vaciado del nivel inferior, umbral de ganancia, cavidad y cascada de fotones.
+- Calculadora de fotones: longitud de onda → frecuencia → energía en J y eV, con lectura del espectro y diagrama de niveles.
+- Mini-experimentos de propiedades: ancho espectral, diferencia de fase e influencia de la distancia.
+- Actividad de propiedades con comprobación global, reintento y explicaciones; cuestionario de 8 preguntas con pistas y repaso de falladas.
+- Modo exposición con 9 secciones, notas, temporizador, saltos de sección y texto grande.
 - Referencias en APA 7, sin Wikipedia ni libros.
 - Funciona sin Internet, sin frameworks y sin CDN.
 
@@ -37,6 +38,7 @@ Y visita `http://127.0.0.1:4173/`.
 │  └─ styles.css
 ├─ js/
 │  ├─ main.js
+│  ├─ properties.js
 │  ├─ laser-lab.js
 │  ├─ photon-calculator.js
 │  ├─ detector.js
@@ -57,13 +59,7 @@ Y visita `http://127.0.0.1:4173/`.
 
 ## Editar los nombres del equipo
 
-Los nombres están **solo** en la sección `#equipo` de `index.html`, dentro del bloque marcado con:
-
-```html
-<!-- EDITAR AQUÍ: reemplaza los cuatro placeholders [Integrante N] por los nombres del equipo. -->
-```
-
-Reemplaza `[Integrante 1]`, `[Integrante 2]`, `[Integrante 3]` y `[Integrante 4]`. Si el equipo tiene otra cantidad de integrantes, ajusta también la cantidad de elementos de la lista.
+Los nombres están **solo** en la sección `#equipo` de `index.html`, dentro de la lista `.team-names`. Si el equipo cambia de integrantes, edita esa lista directamente.
 
 El guion de exposición conserva los roles de participación para organizar la presentación; no aparecen en la sección de integrantes.
 
@@ -73,7 +69,8 @@ El guion de exposición conserva los roles de participación para organizar la p
 2. Presiona `F11` o el botón **Pantalla completa** dentro del modo exposición.
 3. Pulsa **Presentar** en la barra superior.
 4. Usa las flechas `←` y `→` para recorrer las 9 secciones; `Esc` cierra el panel.
-5. Ten a la mano `docs/la-ruta-del-foton.pdf` como respaldo si falla el proyector.
+5. Usa los puntos numerados para saltar a una sección, el temporizador para controlar el tiempo y **Texto grande** si el proyector lo necesita.
+6. Ten a la mano `docs/la-ruta-del-foton.pdf` como respaldo si falla el proyector.
 
 El guion completo, con tiempos, frases y preguntas probables del jurado, está en [`docs/GUION.md`](docs/GUION.md).
 
@@ -106,12 +103,12 @@ Los pasos detallados, la solución de problemas y la alternativa con `wrangler` 
 El registro de pruebas está en [`docs/QA.md`](docs/QA.md). Incluye:
 
 - Apertura con `file://` y con servidor local.
-- Laboratorio, calculadora, pestañas, actividad de propiedades, cuestionario y modo exposición.
+- Laboratorio, calculadora, mini-experimentos de propiedades, pestañas, actividad de propiedades, cuestionario, esquema de He-Ne y modo exposición.
 - Revisión responsive de 360 a 1920 px sin scroll horizontal.
 - Movimiento reducido.
 - Revisión de accesibilidad con axe-core (0 violaciones en escritorio y móvil).
 - Verificación de los 21 enlaces (todos respondieron 200).
-- Generación del PDF de respaldo.
+- Diseño de impresión revisado; el PDF de respaldo no se regeneró en esta versión.
 
 ## Tecnología
 
