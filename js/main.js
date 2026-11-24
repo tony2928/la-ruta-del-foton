@@ -545,6 +545,21 @@
     update();
   }
 
+  /* ---------- Referencias: visibles al imprimir ---------- */
+  function initRefsPrint() {
+    const refs = document.querySelector(".refs-collapse");
+    if (!refs) return;
+
+    let wasOpen = false;
+    window.addEventListener("beforeprint", () => {
+      wasOpen = refs.open;
+      refs.open = true;
+    });
+    window.addEventListener("afterprint", () => {
+      refs.open = wasOpen;
+    });
+  }
+
   /* ---------- Enlaces externos ---------- */
   function initExternalLinks() {
     document.querySelectorAll("a[href^='http']").forEach((link) => {
@@ -562,6 +577,7 @@
     initHeneSteps();
     initPresenter();
     initToTop();
+    initRefsPrint();
     initExternalLinks();
   });
 })();
